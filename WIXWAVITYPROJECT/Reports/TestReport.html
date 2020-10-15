@@ -1,0 +1,2777 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset='UFT-8' /> 
+	<meta name='description' content='' />
+	<meta name='robots' content='noodp, noydir' />
+	<meta name='viewport' content='width=device-width, initial-scale=1' />
+	<meta id="timeStampFormat" name="timeStampFormat" content='MMM d, yyyy hh:mm:ss a'/>
+	
+	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600' rel='stylesheet' type='text/css' />
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+	<link href='https://cdn.rawgit.com/extent-framework/extent-github-cdn/e9ccc29bd18c7914697075f44948d0913e462478/v3html/css/extent.css' type='text/css' rel='stylesheet' />
+	
+	<title>Wavity Test results</title>
+
+	<style type='text/css'>
+		/* json-tree */
+		.jstBracket,.jstComma,.jstValue{white-space:pre-wrap}.jstValue{font-size:10px;font-weight:400;font-family:"Lucida Console",Monaco,monospace}.jstProperty{color:#666;word-wrap:break-word}.jstBool{color:#2525CC}.jstNum{color:#D036D0}.jstNull{color:gray}.jstStr{color:#2DB669}.jstFold:after{content:' -';cursor:pointer}.jstExpand{white-space:normal}.jstExpand:after{content:' +';cursor:pointer}.jstFolded{white-space:normal!important}.jstHiddenBlock{display:none}
+	</style>
+	
+	<script type="text/javascript">
+		/*! json-tree - v0.2.2 - 2017-09-25, MIT LICENSE */
+		var JSONTree=function(){var n={"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#x27;","/":"&#x2F;"},t=0,r=0;this.create=function(n,t){return r+=1,N(u(n,0,!1),{class:"jstValue"})};var e=function(t){return t.replace(/[&<>'"]/g,function(t){return n[t]})},s=function(){return r+"_"+t++},u=function(n,t,r){if(null===n)return f(r?t:0);switch(typeof n){case"boolean":return l(n,r?t:0);case"number":return i(n,r?t:0);case"string":return o(n,r?t:0);default:return n instanceof Array?a(n,t,r):c(n,t,r)}},c=function(n,t,r){var e=s(),u=Object.keys(n).map(function(r){return j(r,n[r],t+1,!0)}).join(m()),c=[g("{",r?t:0,e),N(u,{id:e}),p("}",t)].join("\n");return N(c,{})},a=function(n,t,r){var e=s(),c=n.map(function(n){return u(n,t+1,!0)}).join(m());return[g("[",r?t:0,e),N(c,{id:e}),p("]",t)].join("\n")},o=function(n,t){var r=e(JSON.stringify(n));return N(v(r,t),{class:"jstStr"})},i=function(n,t){return N(v(n,t),{class:"jstNum"})},l=function(n,t){return N(v(n,t),{class:"jstBool"})},f=function(n){return N(v("null",n),{class:"jstNull"})},j=function(n,t,r){var s=v(e(JSON.stringify(n))+": ",r),c=N(u(t,r,!1),{});return N(s+c,{class:"jstProperty"})},m=function(){return N(",\n",{class:"jstComma"})},N=function(n,t){return d("span",t,n)},d=function(n,t,r){return"<"+n+Object.keys(t).map(function(n){return" "+n+'="'+t[n]+'"'}).join("")+">"+r+"</"+n+">"},g=function(n,t,r){return N(v(n,t),{class:"jstBracket"})+N("",{class:"jstFold",onclick:"JSONTree.toggle('"+r+"')"})};this.toggle=function(n){var t=document.getElementById(n),r=t.parentNode,e=t.previousElementSibling;""===t.className?(t.className="jstHiddenBlock",r.className="jstFolded",e.className="jstExpand"):(t.className="",r.className="",e.className="jstFold")};var p=function(n,t){return N(v(n,t),{})},v=function(n,t){return Array(2*t+1).join(" ")+n};return this}();
+	</script>
+</head>
+	<body class='extent dark default hide-overflow '>
+		<div id='theme-selector' alt='Click to toggle theme. To enable by default, use theme configuration.' title='Click to toggle theme. To enable by default, use theme configuration.'>
+			<span><i class='material-icons'>desktop_windows</i></span>
+		</div>
+<nav>
+	<div class="nav-wrapper">
+		<a href="#!" class="brand-logo black"><img src="https://cdn.rawgit.com/extent-framework/extent-github-cdn/d74480e/commons/img/logo.png"></a>
+		<!-- slideout menu -->
+		<ul id='slide-out' class='side-nav fixed hide-on-med-and-down'>
+			<li class='waves-effect active'><a href='#!' view='test-view' onclick="configureView(0);chartsView('test');"><i class='material-icons'>dashboard</i></a></li>
+						<li class='waves-effect'><a href='#!' view='category-view' onclick="configureView(1)"><i class='material-icons'>label_outline</i></a></li>
+			<li class='waves-effect'><a href='#!' view='author-view' onclick="configureView(3)"><i class='material-icons'>person_outline</i></a></li>
+			<li class='waves-effect'><a href='#!' onclick="configureView(-1);chartsView('dashboard');" view='dashboard-view'><i class='material-icons'>track_changes</i></a></li>
+		</ul>
+		<!-- report name -->
+		<span class='report-name'>WavityTestSuite</span>
+		<!-- report headline -->
+		<span class='report-headline'></span>
+		<!-- nav-right -->
+		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
+			<a href='#!'>
+			<span class='label blue darken-3 suite-start-time'>Oct 15, 2020 05:08:52 PM</span>
+			</a>
+		</ul>
+	</div>
+</nav>		<!-- container -->
+		<div class='container'>
+<div id='test-view' class='view'>
+	<section id='controls'>
+		<div class='controls grey lighten-4'>
+			<!-- test toggle -->
+			<div class='chip transparent'>
+				<a class='dropdown-button tests-toggle' data-activates='tests-toggle' data-constrainwidth='true' data-beloworigin='true' data-hover='true' href='#'>
+				<i class='material-icons'>warning</i> Status
+				</a>
+				<ul id='tests-toggle' class='dropdown-content'>
+										<li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
+					<li class='divider'></li>
+					<li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
+				</ul>
+			</div>
+			<!-- test toggle -->
+			<!-- category toggle -->
+			<div class='chip transparent'>
+				<a class='dropdown-button category-toggle' data-activates='category-toggle' data-constrainwidth='false' data-beloworigin='true' data-hover='true' href='#'>
+				<i class='material-icons'>local_offer</i> Category
+				</a>
+				<ul id='category-toggle' class='dropdown-content'>
+					<li><a href='#'>Group:Smoke</a></li>
+					<li class='divider'></li>
+					<li class='clear'><a href='#!' clear='true'>Clear Filters</a></li>
+				</ul>
+			</div>
+			<!-- category toggle -->
+			<!-- clear filters -->
+			<div class='chip transparent hide'>
+				<a class='' id='clear-filters' alt='Clear Filters' title='Clear Filters'>
+				<i class='material-icons'>close</i> Clear
+				</a>
+			</div>
+			<!-- clear filters -->
+			<!-- enable dashboard -->
+			<div id='toggle-test-view-charts' class='chip transparent'>
+				<a class='pink-text' id='enable-dashboard' alt='Enable Dashboard' title='Enable Dashboard'>
+				<i class='material-icons'>track_changes</i> Dashboard
+				</a>
+			</div>
+			<!-- enable dashboard -->
+			<!-- search -->
+			<div class='chip transparent' alt='Search Tests' title='Search Tests'>
+				<a href="#" class='search-div'>
+				<i class='material-icons'>search</i> Search
+				</a>
+				<div class='input-field left hide'>
+					<input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+				</div>
+			</div>
+			<!-- search -->
+		</div>
+	</section>
+<div id='test-view-charts' class='subview-full'>
+	<div id='charts-row' class='row nm-v nm-h'>
+		<div class='col s12 m6 l6 np-h'>
+			<div class='card-panel nm-v'>
+				<div class='left panel-name'>Tests</div>
+				<div class='chart-box' style="max-height:94px;">
+					<canvas id='parent-analysis' width='100' height='80'></canvas>
+				</div>
+				<div class='block text-small'>
+					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>1</span> test(s) passed</span>
+				</div>
+				<div class='block text-small'>
+					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> test(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+				</div>
+			</div>
+		</div>
+		<div class='col s12 m6 l6 np-h'>
+			<div class='card-panel nm-v'>
+				<div class='left panel-name'>Steps</div>
+				<div class='chart-box' style="max-height:94px;">
+					<canvas id='child-analysis' width='100' height='80'></canvas>
+				</div>
+				<div class='block text-small'>
+					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>37</span> step(s) passed</span>
+				</div>
+				<div class='block text-small'>
+					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="timeline-chart" class="row nm-v nm-h">
+		<div class="col s12 m12 l12 np-h">
+			<div class="card-panel">
+				<div class='left panel-name'>Timeline (seconds)</div>
+				<div class="chart-box" style="width:98%;max-height:145px;">
+					<canvas id="timeline" height="120"></canvas>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>	<div class='subview-left left'>
+		<div class='view-summary'>
+			<ul id='test-collection' class='test-collection'>
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='1'>
+					<div class='test-heading'>
+						<span class='test-name'>WAVE-APPS-TC-01</span>
+						<span class='test-time'>Oct 15, 2020 05:09:20 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Oct 15, 2020 05:09:20 PM</span>
+	<span class='label end-time'>Oct 15, 2020 05:13:17 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 3m 56s+628ms</span>
+</div>
+<div class='test-attributes'>
+	<div class='category-list'>
+		<span class='category label'>Group:Smoke</span>
+	</div>
+	<div class='author-list'>
+		<span class='author label'>AutomationEngineer:VivekReddy</span>
+	</div>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>5:09:20 PM</td>
+				<td class='step-details'>
+						<textarea disabled class='code-block'>WAVE-APPS-TC-01: Creating An App With Numbers Control</textarea>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+<ul class='collapsible node-list' data-collapsible='accordion'>
+	<li class='node level-1 leaf pass' status='pass' test-id='2'>
+		<div class='collapsible-header'>
+			<div class='node-name'><strong style='color:Lime;'>Keyword: login</strong></div>
+			<span class='node-time'>Oct 15, 2020 05:09:20 PM</span>
+			&middot; <span class='node-duration'>0h 0m 13s+85ms</span>
+			<span class='test-status right pass'>pass</span>
+		</div>
+		<div class='collapsible-body'>
+			<div class='node-steps'>
+				<table class='bordered table-results'>
+					<thead>
+						<tr>
+							<th>Status</th>
+							<th>Timestamp</th>
+							<th>Details</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class='log' status='info'>
+							<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+							<td class='timestamp'>5:09:20 PM</td>
+							<td class='step-details'>
+									<span class='badge white-text pink'>|Login Into The Application|</span>
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>5:09:20 PM</td>
+							<td class='step-details'>
+									Step: -- Verfiying The Login Card[loginCard]
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>5:09:24 PM</td>
+							<td class='step-details'>
+									Step: -- Verfiying The Wavity Logo[logo]
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>5:09:25 PM</td>
+							<td class='step-details'>
+									Step: -- Entering The Data In UserName[userName] With Test Data [swethak@wavity.com]
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>5:09:26 PM</td>
+							<td class='step-details'>
+									Step: -- Clicking The Next Button[next]
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>5:09:27 PM</td>
+							<td class='step-details'>
+									Step: -- Verfiying The Login Card[loginCard]
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>5:09:29 PM</td>
+							<td class='step-details'>
+									Step: -- Verfiying The Wavity Logo[logo]
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>5:09:30 PM</td>
+							<td class='step-details'>
+									Step: -- Entering The Data In PassWord[passWord] With Test Data [Zion@123]
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>5:09:31 PM</td>
+							<td class='step-details'>
+									Step: -- Verfiying Forgot Password Link[forgotPassword]
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>5:09:32 PM</td>
+							<td class='step-details'>
+									Step: -- Verfiying Back Button[back]
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>5:09:33 PM</td>
+							<td class='step-details'>
+									Step: -- Clicking The Element Login[continue]
+								
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</li>
+	<li class='node level-1 leaf pass' status='pass' test-id='3'>
+		<div class='collapsible-header'>
+			<div class='node-name'><strong style='color:Lime;'>Keyword: acceptCookie</strong></div>
+			<span class='node-time'>Oct 15, 2020 05:09:34 PM</span>
+			&middot; <span class='node-duration'>0h 0m 36s+162ms</span>
+			<span class='test-status right pass'>pass</span>
+		</div>
+		<div class='collapsible-body'>
+			<div class='node-steps'>
+				<table class='bordered table-results'>
+					<thead>
+						<tr>
+							<th>Status</th>
+							<th>Timestamp</th>
+							<th>Details</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class='log' status='info'>
+							<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+							<td class='timestamp'>5:09:34 PM</td>
+							<td class='step-details'>
+									<span class='badge white-text pink'>|Accepting The Coockie|</span>
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>5:10:10 PM</td>
+							<td class='step-details'>
+									Step: -- Clicking On The Coockie[acceptCookie]
+								
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</li>
+	<li class='node level-1  pass' status='pass' test-id='4'>
+		<div class='collapsible-header'>
+			<div class='node-name'><strong style='color:Lime;'>Keyword: search_Delete_App</strong></div>
+			<span class='node-time'>Oct 15, 2020 05:10:12 PM</span>
+			&middot; <span class='node-duration'>0h 0m 8s+773ms</span>
+			<span class='test-status right pass'>pass</span>
+		</div>
+		<div class='collapsible-body'>
+			<div class='node-steps'>
+				<table class='bordered table-results'>
+					<thead>
+						<tr>
+							<th>Status</th>
+							<th>Timestamp</th>
+							<th>Details</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class='log' status='info'>
+							<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+							<td class='timestamp'>5:10:12 PM</td>
+							<td class='step-details'>
+									<span class='badge white-text pink'>|Searching For Existing Apps and Delete If Any|</span>
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>5:10:12 PM</td>
+							<td class='step-details'>
+									Step: -- Clicking On Home Menu Button[homeMenu]
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>5:10:13 PM</td>
+							<td class='step-details'>
+									Step: -- Clicking On Apps[apps]
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>5:10:14 PM</td>
+							<td class='step-details'>
+									Step: -- Searching For An app is exist already or not[appSearch] With Test Data [WIX_WAVE_NUMBERS_CONTROL_APP]
+								
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<ul class='collapsible node-list' data-collapsible='accordion'>
+	<li class='node level-2 leaf pass' status='pass' test-id='5'>
+		<div class='collapsible-header'>
+			<div class='node-name'><strong style='color:Lime;'>Loop1: Deleting The Apps</strong></div>
+			<span class='node-time'>Oct 15, 2020 05:10:18 PM</span>
+			&middot; <span class='node-duration'>0h 0m 2s+371ms</span>
+			<span class='test-status right pass'>pass</span>
+		</div>
+		<div class='collapsible-body'>
+			<div class='node-steps'>
+				<table class='bordered table-results'>
+					<thead>
+						<tr>
+							<th>Status</th>
+							<th>Timestamp</th>
+							<th>Details</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class='log' status='info'>
+							<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+							<td class='timestamp'>5:10:18 PM</td>
+							<td class='step-details'>
+									<span class='badge white-text pink'>Deleting The App1</span>
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>5:10:18 PM</td>
+							<td class='step-details'>
+									Step: -- Clicking On Three Dot Menu App To Delete[appSelect]
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>5:10:19 PM</td>
+							<td class='step-details'>
+									Step: -- Clicking On Delete Option[deleteApp]
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>5:10:20 PM</td>
+							<td class='step-details'>
+									Step: -- Accepting The App Deletion pop Up[deleteAppAccept]
+								
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</li>
+		</ul>
+	</li>
+	<li class='node level-1 leaf pass' status='pass' test-id='6'>
+		<div class='collapsible-header'>
+			<div class='node-name'><strong style='color:Lime;'>Keyword: createAnApp</strong></div>
+			<span class='node-time'>Oct 15, 2020 05:10:30 PM</span>
+			&middot; <span class='node-duration'>0h 0m 11s+310ms</span>
+			<span class='test-status right pass'>pass</span>
+		</div>
+		<div class='collapsible-body'>
+			<div class='node-steps'>
+				<table class='bordered table-results'>
+					<thead>
+						<tr>
+							<th>Status</th>
+							<th>Timestamp</th>
+							<th>Details</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class='log' status='info'>
+							<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+							<td class='timestamp'>5:10:30 PM</td>
+							<td class='step-details'>
+									<span class='badge white-text pink'>|Creating Sample App To Test All The Properties|</span>
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>5:10:30 PM</td>
+							<td class='step-details'>
+									Step: -- Verifying W-Image On The HomePage[wImage1]
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>5:10:31 PM</td>
+							<td class='step-details'>
+									Step: -- Clicking on W-Image On The HomePage[wImage1]
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>5:10:32 PM</td>
+							<td class='step-details'>
+									Step: -- Clicking On Apps[apps]
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>5:10:33 PM</td>
+							<td class='step-details'>
+									Step: -- Clicking On Create New App Link[createNewApp]
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>5:10:34 PM</td>
+							<td class='step-details'>
+									Step: -- Clicking On Create Button[createButton]
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>5:10:36 PM</td>
+							<td class='step-details'>
+									Step: -- Verify App Name text[appName]
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>5:10:37 PM</td>
+							<td class='step-details'>
+									Step: -- Entering App Name[enterAppName] With Test Data [WIX_WAVE_NUMBERS_CONTROL_APP_Thu_Oct_15_17_10_37_IST_2020]
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>5:10:38 PM</td>
+							<td class='step-details'>
+									Step: -- Entering App Description[appDescription] With Test Data [Creating An App with Numbers Control]
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>5:10:41 PM</td>
+							<td class='step-details'>
+									Step: -- Clicking On Create Button[clickCreateApp]
+								
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</li>
+	<li class='node level-1  pass' status='pass' test-id='7'>
+		<div class='collapsible-header'>
+			<div class='node-name'><strong style='color:Lime;'>Keyword: addControls_setProprties</strong></div>
+			<span class='node-time'>Oct 15, 2020 05:10:42 PM</span>
+			&middot; <span class='node-duration'>0h 0m 51s+948ms</span>
+			<span class='test-status right pass'>pass</span>
+		</div>
+		<div class='collapsible-body'>
+			<div class='node-steps'>
+				<table class='bordered table-results'>
+					<thead>
+						<tr>
+							<th>Status</th>
+							<th>Timestamp</th>
+							<th>Details</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class='log' status='info'>
+							<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+							<td class='timestamp'>5:10:42 PM</td>
+							<td class='step-details'>
+									<span class='badge white-text pink'>|Adding Controls To An App|</span>
+								
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<ul class='collapsible node-list' data-collapsible='accordion'>
+	<li class='node level-2  pass' status='pass' test-id='8'>
+		<div class='collapsible-header'>
+			<div class='node-name'><strong style='color:Lime;'>Loop1: Adding The Main Control1: Numbers</strong></div>
+			<span class='node-time'>Oct 15, 2020 05:10:42 PM</span>
+			&middot; <span class='node-duration'>0h 0m 24s+592ms</span>
+			<span class='test-status right pass'>pass</span>
+		</div>
+		<div class='collapsible-body'>
+			<div class='node-steps'>
+				<table class='bordered table-results'>
+					<thead>
+						<tr>
+							<th>Status</th>
+							<th>Timestamp</th>
+							<th>Details</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class='log' status='info'>
+							<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+							<td class='timestamp'>5:10:42 PM</td>
+							<td class='step-details'>
+									<span class='badge white-text pink'>Adding Sub-Control: Number</span>
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>5:10:42 PM</td>
+							<td class='step-details'>
+									Step: -- Clicking On MainControl On the App Designer[mainControl]
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>5:10:46 PM</td>
+							<td class='step-details'>
+									Step: -- Dragging An Element [subControl] To [controlsDrop]
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>5:10:47 PM</td>
+							<td class='step-details'>
+									Step: -- Entering App Control Label Name[controlLabel] With Test Data [Batch ID]
+								
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<ul class='collapsible node-list' data-collapsible='accordion'>
+	<li class='node level-3 leaf pass' status='pass' test-id='9'>
+		<div class='collapsible-header'>
+			<div class='node-name'><strong style='color:Lime;'>InnerLoop1: Adding The Property: Required</strong></div>
+			<span class='node-time'>Oct 15, 2020 05:10:49 PM</span>
+			&middot; <span class='node-duration'>0h 0m 0s+3ms</span>
+			<span class='test-status right pass'>pass</span>
+		</div>
+		<div class='collapsible-body'>
+			<div class='node-steps'>
+				<table class='bordered table-results'>
+					<thead>
+						<tr>
+							<th>Status</th>
+							<th>Timestamp</th>
+							<th>Details</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class='log' status='info'>
+							<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+							<td class='timestamp'>5:10:49 PM</td>
+							<td class='step-details'>
+									<span class='badge white-text pink'>Property: Required</span>
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>5:10:49 PM</td>
+							<td class='step-details'>
+									Step: -- Selecting The Requiredproperty[[selectProperty:Required]]
+								
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</li>
+	<li class='node level-3 leaf pass' status='pass' test-id='10'>
+		<div class='collapsible-header'>
+			<div class='node-name'><strong style='color:Lime;'>InnerLoop2: Adding The Property: Deprecated</strong></div>
+			<span class='node-time'>Oct 15, 2020 05:10:50 PM</span>
+			&middot; <span class='node-duration'>0h 0m 0s+6ms</span>
+			<span class='test-status right pass'>pass</span>
+		</div>
+		<div class='collapsible-body'>
+			<div class='node-steps'>
+				<table class='bordered table-results'>
+					<thead>
+						<tr>
+							<th>Status</th>
+							<th>Timestamp</th>
+							<th>Details</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class='log' status='info'>
+							<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+							<td class='timestamp'>5:10:50 PM</td>
+							<td class='step-details'>
+									<span class='badge white-text pink'>Property: Deprecated</span>
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>5:10:50 PM</td>
+							<td class='step-details'>
+									Step: -- Selecting The Deprecatedproperty[[selectProperty:Deprecated]]
+								
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</li>
+	<li class='node level-3 leaf pass' status='pass' test-id='11'>
+		<div class='collapsible-header'>
+			<div class='node-name'><strong style='color:Lime;'>InnerLoop3: Adding The Property: Required</strong></div>
+			<span class='node-time'>Oct 15, 2020 05:10:51 PM</span>
+			&middot; <span class='node-duration'>0h 0m 0s+4ms</span>
+			<span class='test-status right pass'>pass</span>
+		</div>
+		<div class='collapsible-body'>
+			<div class='node-steps'>
+				<table class='bordered table-results'>
+					<thead>
+						<tr>
+							<th>Status</th>
+							<th>Timestamp</th>
+							<th>Details</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class='log' status='info'>
+							<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+							<td class='timestamp'>5:10:51 PM</td>
+							<td class='step-details'>
+									<span class='badge white-text pink'>Property: Required</span>
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>5:10:51 PM</td>
+							<td class='step-details'>
+									Step: -- Selecting The Requiredproperty[[selectProperty:Required]]
+								
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</li>
+	<li class='node level-3 leaf pass' status='pass' test-id='12'>
+		<div class='collapsible-header'>
+			<div class='node-name'><strong style='color:Lime;'>InnerLoop4: Adding The Property: Read only</strong></div>
+			<span class='node-time'>Oct 15, 2020 05:10:52 PM</span>
+			&middot; <span class='node-duration'>0h 0m 0s+4ms</span>
+			<span class='test-status right pass'>pass</span>
+		</div>
+		<div class='collapsible-body'>
+			<div class='node-steps'>
+				<table class='bordered table-results'>
+					<thead>
+						<tr>
+							<th>Status</th>
+							<th>Timestamp</th>
+							<th>Details</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class='log' status='info'>
+							<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+							<td class='timestamp'>5:10:52 PM</td>
+							<td class='step-details'>
+									<span class='badge white-text pink'>Property: Read only</span>
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>5:10:52 PM</td>
+							<td class='step-details'>
+									Step: -- Selecting The Read onlyproperty[[selectProperty:Read only]]
+								
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</li>
+	<li class='node level-3 leaf pass' status='pass' test-id='13'>
+		<div class='collapsible-header'>
+			<div class='node-name'><strong style='color:Lime;'>InnerLoop5: Adding The Property: Read only</strong></div>
+			<span class='node-time'>Oct 15, 2020 05:10:53 PM</span>
+			&middot; <span class='node-duration'>0h 0m 0s+4ms</span>
+			<span class='test-status right pass'>pass</span>
+		</div>
+		<div class='collapsible-body'>
+			<div class='node-steps'>
+				<table class='bordered table-results'>
+					<thead>
+						<tr>
+							<th>Status</th>
+							<th>Timestamp</th>
+							<th>Details</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class='log' status='info'>
+							<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+							<td class='timestamp'>5:10:53 PM</td>
+							<td class='step-details'>
+									<span class='badge white-text pink'>Property: Read only</span>
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>5:10:53 PM</td>
+							<td class='step-details'>
+									Step: -- Selecting The Read onlyproperty[[selectProperty:Read only]]
+								
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</li>
+	<li class='node level-3 leaf pass' status='pass' test-id='14'>
+		<div class='collapsible-header'>
+			<div class='node-name'><strong style='color:Lime;'>InnerLoop6: Adding The Property: Help message:Trying To Select All The Properties</strong></div>
+			<span class='node-time'>Oct 15, 2020 05:10:54 PM</span>
+			&middot; <span class='node-duration'>0h 0m 0s+2ms</span>
+			<span class='test-status right pass'>pass</span>
+		</div>
+		<div class='collapsible-body'>
+			<div class='node-steps'>
+				<table class='bordered table-results'>
+					<thead>
+						<tr>
+							<th>Status</th>
+							<th>Timestamp</th>
+							<th>Details</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class='log' status='info'>
+							<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+							<td class='timestamp'>5:10:54 PM</td>
+							<td class='step-details'>
+									<span class='badge white-text pink'>Property: Help message:Trying To Select All The Properties</span>
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>5:10:54 PM</td>
+							<td class='step-details'>
+									Step: -- Giving The Data In The Help messageproperty[[selectProperty:Help message]] With Test Data [Trying To Select All The Properties]
+								
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</li>
+	<li class='node level-3 leaf pass' status='pass' test-id='15'>
+		<div class='collapsible-header'>
+			<div class='node-name'><strong style='color:Lime;'>InnerLoop7: Adding The Property: Scale:8</strong></div>
+			<span class='node-time'>Oct 15, 2020 05:10:56 PM</span>
+			&middot; <span class='node-duration'>0h 0m 0s+0ms</span>
+			<span class='test-status right pass'>pass</span>
+		</div>
+		<div class='collapsible-body'>
+			<div class='node-steps'>
+				<table class='bordered table-results'>
+					<thead>
+						<tr>
+							<th>Status</th>
+							<th>Timestamp</th>
+							<th>Details</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class='log' status='info'>
+							<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+							<td class='timestamp'>5:10:56 PM</td>
+							<td class='step-details'>
+									<span class='badge white-text pink'>Property: Scale:8</span>
+								
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</li>
+	<li class='node level-3 leaf pass' status='pass' test-id='16'>
+		<div class='collapsible-header'>
+			<div class='node-name'><strong style='color:Lime;'>InnerLoop8: Adding The Property: Allow negative</strong></div>
+			<span class='node-time'>Oct 15, 2020 05:10:57 PM</span>
+			&middot; <span class='node-duration'>0h 0m 0s+7ms</span>
+			<span class='test-status right pass'>pass</span>
+		</div>
+		<div class='collapsible-body'>
+			<div class='node-steps'>
+				<table class='bordered table-results'>
+					<thead>
+						<tr>
+							<th>Status</th>
+							<th>Timestamp</th>
+							<th>Details</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class='log' status='info'>
+							<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+							<td class='timestamp'>5:10:57 PM</td>
+							<td class='step-details'>
+									<span class='badge white-text pink'>Property: Allow negative</span>
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>5:10:57 PM</td>
+							<td class='step-details'>
+									Step: -- Selecting The Allow negativeproperty[[selectProperty:Allow negative]]
+								
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</li>
+	<li class='node level-3 leaf pass' status='pass' test-id='17'>
+		<div class='collapsible-header'>
+			<div class='node-name'><strong style='color:Lime;'>InnerLoop9: Adding The Property: Placeholder:Checking All Properties For One Control</strong></div>
+			<span class='node-time'>Oct 15, 2020 05:10:58 PM</span>
+			&middot; <span class='node-duration'>0h 0m 0s+3ms</span>
+			<span class='test-status right pass'>pass</span>
+		</div>
+		<div class='collapsible-body'>
+			<div class='node-steps'>
+				<table class='bordered table-results'>
+					<thead>
+						<tr>
+							<th>Status</th>
+							<th>Timestamp</th>
+							<th>Details</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class='log' status='info'>
+							<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+							<td class='timestamp'>5:10:58 PM</td>
+							<td class='step-details'>
+									<span class='badge white-text pink'>Property: Placeholder:Checking All Properties For One Control</span>
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>5:10:58 PM</td>
+							<td class='step-details'>
+									Step: -- Giving The Data In The Placeholderproperty[[selectProperty:Placeholder]] With Test Data [Checking All Properties For One Control]
+								
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</li>
+	<li class='node level-3 leaf pass' status='pass' test-id='18'>
+		<div class='collapsible-header'>
+			<div class='node-name'><strong style='color:Lime;'>InnerLoop10: Adding The Property: Default value:1200.56789876 </strong></div>
+			<span class='node-time'>Oct 15, 2020 05:11:00 PM</span>
+			&middot; <span class='node-duration'>0h 0m 0s+3ms</span>
+			<span class='test-status right pass'>pass</span>
+		</div>
+		<div class='collapsible-body'>
+			<div class='node-steps'>
+				<table class='bordered table-results'>
+					<thead>
+						<tr>
+							<th>Status</th>
+							<th>Timestamp</th>
+							<th>Details</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class='log' status='info'>
+							<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+							<td class='timestamp'>5:11:00 PM</td>
+							<td class='step-details'>
+									<span class='badge white-text pink'>Property: Default value:1200.56789876 </span>
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>5:11:00 PM</td>
+							<td class='step-details'>
+									Step: -- Giving The Data In The Default valueproperty[[selectProperty:Default value]] With Test Data [1200.56789876 ]
+								
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</li>
+	<li class='node level-3 leaf pass' status='pass' test-id='19'>
+		<div class='collapsible-header'>
+			<div class='node-name'><strong style='color:Lime;'>InnerLoop11: Adding The Property: Populate on create</strong></div>
+			<span class='node-time'>Oct 15, 2020 05:11:01 PM</span>
+			&middot; <span class='node-duration'>0h 0m 0s+3ms</span>
+			<span class='test-status right pass'>pass</span>
+		</div>
+		<div class='collapsible-body'>
+			<div class='node-steps'>
+				<table class='bordered table-results'>
+					<thead>
+						<tr>
+							<th>Status</th>
+							<th>Timestamp</th>
+							<th>Details</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class='log' status='info'>
+							<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+							<td class='timestamp'>5:11:01 PM</td>
+							<td class='step-details'>
+									<span class='badge white-text pink'>Property: Populate on create</span>
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>5:11:01 PM</td>
+							<td class='step-details'>
+									Step: -- Selecting The Populate on createproperty[[selectProperty:Populate on create]]
+								
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</li>
+	<li class='node level-3 leaf pass' status='pass' test-id='20'>
+		<div class='collapsible-header'>
+			<div class='node-name'><strong style='color:Lime;'>InnerLoop12: Adding The Property: Allow data import</strong></div>
+			<span class='node-time'>Oct 15, 2020 05:11:02 PM</span>
+			&middot; <span class='node-duration'>0h 0m 0s+2ms</span>
+			<span class='test-status right pass'>pass</span>
+		</div>
+		<div class='collapsible-body'>
+			<div class='node-steps'>
+				<table class='bordered table-results'>
+					<thead>
+						<tr>
+							<th>Status</th>
+							<th>Timestamp</th>
+							<th>Details</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class='log' status='info'>
+							<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+							<td class='timestamp'>5:11:02 PM</td>
+							<td class='step-details'>
+									<span class='badge white-text pink'>Property: Allow data import</span>
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>5:11:02 PM</td>
+							<td class='step-details'>
+									Step: -- Selecting The Allow data importproperty[[selectProperty:Allow data import]]
+								
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</li>
+	<li class='node level-3 leaf pass' status='pass' test-id='21'>
+		<div class='collapsible-header'>
+			<div class='node-name'><strong style='color:Lime;'>InnerLoop13: Adding The Property: Font size:32</strong></div>
+			<span class='node-time'>Oct 15, 2020 05:11:03 PM</span>
+			&middot; <span class='node-duration'>0h 0m 0s+0ms</span>
+			<span class='test-status right pass'>pass</span>
+		</div>
+		<div class='collapsible-body'>
+			<div class='node-steps'>
+				<table class='bordered table-results'>
+					<thead>
+						<tr>
+							<th>Status</th>
+							<th>Timestamp</th>
+							<th>Details</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class='log' status='info'>
+							<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+							<td class='timestamp'>5:11:03 PM</td>
+							<td class='step-details'>
+									<span class='badge white-text pink'>Property: Font size:32</span>
+								
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</li>
+	<li class='node level-3 leaf pass' status='pass' test-id='22'>
+		<div class='collapsible-header'>
+			<div class='node-name'><strong style='color:Lime;'>InnerLoop14: Adding The Property: Font weight:Light</strong></div>
+			<span class='node-time'>Oct 15, 2020 05:11:05 PM</span>
+			&middot; <span class='node-duration'>0h 0m 0s+0ms</span>
+			<span class='test-status right pass'>pass</span>
+		</div>
+		<div class='collapsible-body'>
+			<div class='node-steps'>
+				<table class='bordered table-results'>
+					<thead>
+						<tr>
+							<th>Status</th>
+							<th>Timestamp</th>
+							<th>Details</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class='log' status='info'>
+							<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+							<td class='timestamp'>5:11:05 PM</td>
+							<td class='step-details'>
+									<span class='badge white-text pink'>Property: Font weight:Light</span>
+								
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</li>
+	<li class='node level-3 leaf pass' status='pass' test-id='23'>
+		<div class='collapsible-header'>
+			<div class='node-name'><strong style='color:Lime;'>InnerLoop15: Adding The Property: Font style:Normal</strong></div>
+			<span class='node-time'>Oct 15, 2020 05:11:06 PM</span>
+			&middot; <span class='node-duration'>0h 0m 0s+0ms</span>
+			<span class='test-status right pass'>pass</span>
+		</div>
+		<div class='collapsible-body'>
+			<div class='node-steps'>
+				<table class='bordered table-results'>
+					<thead>
+						<tr>
+							<th>Status</th>
+							<th>Timestamp</th>
+							<th>Details</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class='log' status='info'>
+							<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+							<td class='timestamp'>5:11:06 PM</td>
+							<td class='step-details'>
+									<span class='badge white-text pink'>Property: Font style:Normal</span>
+								
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</li>
+	<li class='node level-3 leaf pass' status='pass' test-id='24'>
+		<div class='collapsible-header'>
+			<div class='node-name'><strong style='color:Lime;'>InnerLoop16: Adding The Property: One time entry</strong></div>
+			<span class='node-time'>Oct 15, 2020 05:11:07 PM</span>
+			&middot; <span class='node-duration'>0h 0m 0s+3ms</span>
+			<span class='test-status right pass'>pass</span>
+		</div>
+		<div class='collapsible-body'>
+			<div class='node-steps'>
+				<table class='bordered table-results'>
+					<thead>
+						<tr>
+							<th>Status</th>
+							<th>Timestamp</th>
+							<th>Details</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class='log' status='info'>
+							<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+							<td class='timestamp'>5:11:07 PM</td>
+							<td class='step-details'>
+									<span class='badge white-text pink'>Property: One time entry</span>
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>5:11:07 PM</td>
+							<td class='step-details'>
+									Step: -- Selecting The One time entryproperty[[selectProperty:One time entry]]
+								
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</li>
+		</ul>
+	</li>
+	<li class='node level-2  pass' status='pass' test-id='25'>
+		<div class='collapsible-header'>
+			<div class='node-name'><strong style='color:Lime;'>Loop2: Adding The Main Control2: Numbers</strong></div>
+			<span class='node-time'>Oct 15, 2020 05:11:08 PM</span>
+			&middot; <span class='node-duration'>0h 0m 5s+234ms</span>
+			<span class='test-status right pass'>pass</span>
+		</div>
+		<div class='collapsible-body'>
+			<div class='node-steps'>
+				<table class='bordered table-results'>
+					<thead>
+						<tr>
+							<th>Status</th>
+							<th>Timestamp</th>
+							<th>Details</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class='log' status='info'>
+							<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+							<td class='timestamp'>5:11:08 PM</td>
+							<td class='step-details'>
+									<span class='badge white-text pink'>Adding Sub-Control: Number</span>
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>5:11:08 PM</td>
+							<td class='step-details'>
+									Step: -- Clicking On MainControl On the App Designer[mainControl]
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>5:11:09 PM</td>
+							<td class='step-details'>
+									Step: -- Dragging An Element [subControl] To [controlsDrop]
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>5:11:11 PM</td>
+							<td class='step-details'>
+									Step: -- Entering App Control Label Name[controlLabel] With Test Data [User Code]
+								
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<ul class='collapsible node-list' data-collapsible='accordion'>
+	<li class='node level-3 leaf pass' status='pass' test-id='26'>
+		<div class='collapsible-header'>
+			<div class='node-name'><strong style='color:Lime;'>InnerLoop1: Adding The Property: Help message:Enter User Code</strong></div>
+			<span class='node-time'>Oct 15, 2020 05:11:12 PM</span>
+			&middot; <span class='node-duration'>0h 0m 0s+3ms</span>
+			<span class='test-status right pass'>pass</span>
+		</div>
+		<div class='collapsible-body'>
+			<div class='node-steps'>
+				<table class='bordered table-results'>
+					<thead>
+						<tr>
+							<th>Status</th>
+							<th>Timestamp</th>
+							<th>Details</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class='log' status='info'>
+							<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+							<td class='timestamp'>5:11:12 PM</td>
+							<td class='step-details'>
+									<span class='badge white-text pink'>Property: Help message:Enter User Code</span>
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>5:11:12 PM</td>
+							<td class='step-details'>
+									Step: -- Giving The Data In The Help messageproperty[[selectProperty:Help message]] With Test Data [Enter User Code]
+								
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</li>
+	<li class='node level-3 leaf pass' status='pass' test-id='27'>
+		<div class='collapsible-header'>
+			<div class='node-name'><strong style='color:Lime;'>InnerLoop2: Adding The Property: Font size:22</strong></div>
+			<span class='node-time'>Oct 15, 2020 05:11:13 PM</span>
+			&middot; <span class='node-duration'>0h 0m 0s+0ms</span>
+			<span class='test-status right pass'>pass</span>
+		</div>
+		<div class='collapsible-body'>
+			<div class='node-steps'>
+				<table class='bordered table-results'>
+					<thead>
+						<tr>
+							<th>Status</th>
+							<th>Timestamp</th>
+							<th>Details</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class='log' status='info'>
+							<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+							<td class='timestamp'>5:11:13 PM</td>
+							<td class='step-details'>
+									<span class='badge white-text pink'>Property: Font size:22</span>
+								
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</li>
+		</ul>
+	</li>
+	<li class='node level-2  pass' status='pass' test-id='28'>
+		<div class='collapsible-header'>
+			<div class='node-name'><strong style='color:Lime;'>Loop3: Adding The Main Control3: Numbers</strong></div>
+			<span class='node-time'>Oct 15, 2020 05:11:15 PM</span>
+			&middot; <span class='node-duration'>0h 0m 5s+354ms</span>
+			<span class='test-status right pass'>pass</span>
+		</div>
+		<div class='collapsible-body'>
+			<div class='node-steps'>
+				<table class='bordered table-results'>
+					<thead>
+						<tr>
+							<th>Status</th>
+							<th>Timestamp</th>
+							<th>Details</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class='log' status='info'>
+							<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+							<td class='timestamp'>5:11:15 PM</td>
+							<td class='step-details'>
+									<span class='badge white-text pink'>Adding Sub-Control: Financial</span>
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>5:11:15 PM</td>
+							<td class='step-details'>
+									Step: -- Clicking On MainControl On the App Designer[mainControl]
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>5:11:16 PM</td>
+							<td class='step-details'>
+									Step: -- Dragging An Element [subControl] To [controlsDrop]
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>5:11:17 PM</td>
+							<td class='step-details'>
+									Step: -- Entering App Control Label Name[controlLabel] With Test Data [Amount Paid]
+								
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<ul class='collapsible node-list' data-collapsible='accordion'>
+	<li class='node level-3 leaf pass' status='pass' test-id='29'>
+		<div class='collapsible-header'>
+			<div class='node-name'><strong style='color:Lime;'>InnerLoop1: Adding The Property: Default value:1000</strong></div>
+			<span class='node-time'>Oct 15, 2020 05:11:19 PM</span>
+			&middot; <span class='node-duration'>0h 0m 0s+3ms</span>
+			<span class='test-status right pass'>pass</span>
+		</div>
+		<div class='collapsible-body'>
+			<div class='node-steps'>
+				<table class='bordered table-results'>
+					<thead>
+						<tr>
+							<th>Status</th>
+							<th>Timestamp</th>
+							<th>Details</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class='log' status='info'>
+							<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+							<td class='timestamp'>5:11:19 PM</td>
+							<td class='step-details'>
+									<span class='badge white-text pink'>Property: Default value:1000</span>
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>5:11:19 PM</td>
+							<td class='step-details'>
+									Step: -- Giving The Data In The Default valueproperty[[selectProperty:Default value]] With Test Data [1000]
+								
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</li>
+	<li class='node level-3 leaf pass' status='pass' test-id='30'>
+		<div class='collapsible-header'>
+			<div class='node-name'><strong style='color:Lime;'>InnerLoop2: Adding The Property: Font weight:Bold</strong></div>
+			<span class='node-time'>Oct 15, 2020 05:11:20 PM</span>
+			&middot; <span class='node-duration'>0h 0m 0s+0ms</span>
+			<span class='test-status right pass'>pass</span>
+		</div>
+		<div class='collapsible-body'>
+			<div class='node-steps'>
+				<table class='bordered table-results'>
+					<thead>
+						<tr>
+							<th>Status</th>
+							<th>Timestamp</th>
+							<th>Details</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class='log' status='info'>
+							<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+							<td class='timestamp'>5:11:20 PM</td>
+							<td class='step-details'>
+									<span class='badge white-text pink'>Property: Font weight:Bold</span>
+								
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</li>
+		</ul>
+	</li>
+	<li class='node level-2  pass' status='pass' test-id='31'>
+		<div class='collapsible-header'>
+			<div class='node-name'><strong style='color:Lime;'>Loop4: Adding The Main Control4: Numbers</strong></div>
+			<span class='node-time'>Oct 15, 2020 05:11:21 PM</span>
+			&middot; <span class='node-duration'>0h 0m 5s+521ms</span>
+			<span class='test-status right pass'>pass</span>
+		</div>
+		<div class='collapsible-body'>
+			<div class='node-steps'>
+				<table class='bordered table-results'>
+					<thead>
+						<tr>
+							<th>Status</th>
+							<th>Timestamp</th>
+							<th>Details</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class='log' status='info'>
+							<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+							<td class='timestamp'>5:11:21 PM</td>
+							<td class='step-details'>
+									<span class='badge white-text pink'>Adding Sub-Control: Financial</span>
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>5:11:21 PM</td>
+							<td class='step-details'>
+									Step: -- Clicking On MainControl On the App Designer[mainControl]
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>5:11:22 PM</td>
+							<td class='step-details'>
+									Step: -- Dragging An Element [subControl] To [controlsDrop]
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>5:11:24 PM</td>
+							<td class='step-details'>
+									Step: -- Entering App Control Label Name[controlLabel] With Test Data [Pending Amount]
+								
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<ul class='collapsible node-list' data-collapsible='accordion'>
+	<li class='node level-3 leaf pass' status='pass' test-id='32'>
+		<div class='collapsible-header'>
+			<div class='node-name'><strong style='color:Lime;'>InnerLoop1: Adding The Property: Placeholder:Please Give Pending Amount</strong></div>
+			<span class='node-time'>Oct 15, 2020 05:11:25 PM</span>
+			&middot; <span class='node-duration'>0h 0m 0s+2ms</span>
+			<span class='test-status right pass'>pass</span>
+		</div>
+		<div class='collapsible-body'>
+			<div class='node-steps'>
+				<table class='bordered table-results'>
+					<thead>
+						<tr>
+							<th>Status</th>
+							<th>Timestamp</th>
+							<th>Details</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class='log' status='info'>
+							<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+							<td class='timestamp'>5:11:25 PM</td>
+							<td class='step-details'>
+									<span class='badge white-text pink'>Property: Placeholder:Please Give Pending Amount</span>
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>5:11:25 PM</td>
+							<td class='step-details'>
+									Step: -- Giving The Data In The Placeholderproperty[[selectProperty:Placeholder]] With Test Data [Please Give Pending Amount]
+								
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</li>
+	<li class='node level-3 leaf pass' status='pass' test-id='33'>
+		<div class='collapsible-header'>
+			<div class='node-name'><strong style='color:Lime;'>InnerLoop2: Adding The Property: Font style:Italic</strong></div>
+			<span class='node-time'>Oct 15, 2020 05:11:27 PM</span>
+			&middot; <span class='node-duration'>0h 0m 0s+0ms</span>
+			<span class='test-status right pass'>pass</span>
+		</div>
+		<div class='collapsible-body'>
+			<div class='node-steps'>
+				<table class='bordered table-results'>
+					<thead>
+						<tr>
+							<th>Status</th>
+							<th>Timestamp</th>
+							<th>Details</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class='log' status='info'>
+							<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+							<td class='timestamp'>5:11:27 PM</td>
+							<td class='step-details'>
+									<span class='badge white-text pink'>Property: Font style:Italic</span>
+								
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</li>
+		</ul>
+	</li>
+	<li class='node level-2  pass' status='pass' test-id='34'>
+		<div class='collapsible-header'>
+			<div class='node-name'><strong style='color:Lime;'>Loop5: Adding The Main Control5: Numbers</strong></div>
+			<span class='node-time'>Oct 15, 2020 05:11:28 PM</span>
+			&middot; <span class='node-duration'>0h 0m 6s+320ms</span>
+			<span class='test-status right pass'>pass</span>
+		</div>
+		<div class='collapsible-body'>
+			<div class='node-steps'>
+				<table class='bordered table-results'>
+					<thead>
+						<tr>
+							<th>Status</th>
+							<th>Timestamp</th>
+							<th>Details</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class='log' status='info'>
+							<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+							<td class='timestamp'>5:11:28 PM</td>
+							<td class='step-details'>
+									<span class='badge white-text pink'>Adding Sub-Control: Number</span>
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>5:11:28 PM</td>
+							<td class='step-details'>
+									Step: -- Clicking On MainControl On the App Designer[mainControl]
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>5:11:29 PM</td>
+							<td class='step-details'>
+									Step: -- Dragging An Element [subControl] To [controlsDrop]
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>5:11:31 PM</td>
+							<td class='step-details'>
+									Step: -- Entering App Control Label Name[controlLabel] With Test Data [Percentage Cal]
+								
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<ul class='collapsible node-list' data-collapsible='accordion'>
+	<li class='node level-3 leaf pass' status='pass' test-id='35'>
+		<div class='collapsible-header'>
+			<div class='node-name'><strong style='color:Lime;'>InnerLoop1: Adding The Property: Number type:Integer</strong></div>
+			<span class='node-time'>Oct 15, 2020 05:11:32 PM</span>
+			&middot; <span class='node-duration'>0h 0m 0s+0ms</span>
+			<span class='test-status right pass'>pass</span>
+		</div>
+		<div class='collapsible-body'>
+			<div class='node-steps'>
+				<table class='bordered table-results'>
+					<thead>
+						<tr>
+							<th>Status</th>
+							<th>Timestamp</th>
+							<th>Details</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class='log' status='info'>
+							<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+							<td class='timestamp'>5:11:32 PM</td>
+							<td class='step-details'>
+									<span class='badge white-text pink'>Property: Number type:Integer</span>
+								
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</li>
+	<li class='node level-3 leaf pass' status='pass' test-id='36'>
+		<div class='collapsible-header'>
+			<div class='node-name'><strong style='color:Lime;'>InnerLoop2: Adding The Property: One time entry</strong></div>
+			<span class='node-time'>Oct 15, 2020 05:11:33 PM</span>
+			&middot; <span class='node-duration'>0h 0m 1s+169ms</span>
+			<span class='test-status right pass'>pass</span>
+		</div>
+		<div class='collapsible-body'>
+			<div class='node-steps'>
+				<table class='bordered table-results'>
+					<thead>
+						<tr>
+							<th>Status</th>
+							<th>Timestamp</th>
+							<th>Details</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class='log' status='info'>
+							<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+							<td class='timestamp'>5:11:33 PM</td>
+							<td class='step-details'>
+									<span class='badge white-text pink'>Property: One time entry</span>
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>5:11:33 PM</td>
+							<td class='step-details'>
+									Step: -- Selecting The One time entryproperty[[selectProperty:One time entry]]
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>5:11:34 PM</td>
+							<td class='step-details'>
+									Step: -- Saving An Application[saveApp]
+								
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</li>
+		</ul>
+	</li>
+		</ul>
+	</li>
+	<li class='node level-1 leaf pass' status='pass' test-id='37'>
+		<div class='collapsible-header'>
+			<div class='node-name'><strong style='color:Lime;'>Keyword: activateApp</strong></div>
+			<span class='node-time'>Oct 15, 2020 05:11:40 PM</span>
+			&middot; <span class='node-duration'>0h 0m 10s+405ms</span>
+			<span class='test-status right pass'>pass</span>
+		</div>
+		<div class='collapsible-body'>
+			<div class='node-steps'>
+				<table class='bordered table-results'>
+					<thead>
+						<tr>
+							<th>Status</th>
+							<th>Timestamp</th>
+							<th>Details</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class='log' status='info'>
+							<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+							<td class='timestamp'>5:11:40 PM</td>
+							<td class='step-details'>
+									<span class='badge white-text pink'>|Activating The App|</span>
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>5:11:40 PM</td>
+							<td class='step-details'>
+									Step: -- Verifying App Inactivation Message Available or Not[notActivation]
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>5:11:47 PM</td>
+							<td class='step-details'>
+									Step: -- Clicking On ThreeDot Menu To Activate The app[threeDotMenu]
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>5:11:48 PM</td>
+							<td class='step-details'>
+									Step: -- Clicking on Active Button[activeApp]
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>5:11:51 PM</td>
+							<td class='step-details'>
+									Step: -- Activating The App[activateApp]
+								
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</li>
+	<li class='node level-1  pass' status='pass' test-id='38'>
+		<div class='collapsible-header'>
+			<div class='node-name'><strong style='color:Lime;'>Keyword: addRecords</strong></div>
+			<span class='node-time'>Oct 15, 2020 05:11:57 PM</span>
+			&middot; <span class='node-duration'>0h 1m 13s+266ms</span>
+			<span class='test-status right pass'>pass</span>
+		</div>
+		<div class='collapsible-body'>
+			<div class='node-steps'>
+				<table class='bordered table-results'>
+					<thead>
+						<tr>
+							<th>Status</th>
+							<th>Timestamp</th>
+							<th>Details</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class='log' status='info'>
+							<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+							<td class='timestamp'>5:11:57 PM</td>
+							<td class='step-details'>
+									<span class='badge white-text pink'>|Adding Records To The Application|</span>
+								
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<ul class='collapsible node-list' data-collapsible='accordion'>
+	<li class='node level-2 leaf pass' status='pass' test-id='39'>
+		<div class='collapsible-header'>
+			<div class='node-name'><strong style='color:Lime;'>Loop1: Adding The Records</strong></div>
+			<span class='node-time'>Oct 15, 2020 05:11:57 PM</span>
+			&middot; <span class='node-duration'>0h 0m 7s+438ms</span>
+			<span class='test-status right pass'>pass</span>
+		</div>
+		<div class='collapsible-body'>
+			<div class='node-steps'>
+				<table class='bordered table-results'>
+					<thead>
+						<tr>
+							<th>Status</th>
+							<th>Timestamp</th>
+							<th>Details</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class='log' status='info'>
+							<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+							<td class='timestamp'>5:11:57 PM</td>
+							<td class='step-details'>
+									<span class='badge white-text pink'>Data Insertion In The Record1</span>
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>5:11:57 PM</td>
+							<td class='step-details'>
+									Step: -- Clicking On New Button In App Records List page[addRecord]
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>5:11:58 PM</td>
+							<td class='step-details'>
+									Step: -- Inputting The Data in Number control[AddDataToText_Numebrs_Control] With Test Data [2]
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>5:12:00 PM</td>
+							<td class='step-details'>
+									Step: -- Inputting The Data in Number control[AddDataToText_Numebrs_Control] With Test Data [1235]
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>5:12:01 PM</td>
+							<td class='step-details'>
+									Step: -- Inputting The Data in Financial control[AddDataToText_Numebrs_Control] With Test Data [1236]
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>5:12:02 PM</td>
+							<td class='step-details'>
+									Step: -- Inputting The Data in Financial control[AddDataToText_Numebrs_Control] With Test Data [1237]
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>5:12:03 PM</td>
+							<td class='step-details'>
+									Step: -- Inputting The Data in Number control[AddDataToText_Numebrs_Control] With Test Data [12.344]
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>5:12:04 PM</td>
+							<td class='step-details'>
+									Step: -- Saving The Record[recordSave]
+								
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</li>
+	<li class='node level-2 leaf pass' status='pass' test-id='40'>
+		<div class='collapsible-header'>
+			<div class='node-name'><strong style='color:Lime;'>Loop2: Adding The Records</strong></div>
+			<span class='node-time'>Oct 15, 2020 05:12:06 PM</span>
+			&middot; <span class='node-duration'>0h 0m 9s+683ms</span>
+			<span class='test-status right pass'>pass</span>
+		</div>
+		<div class='collapsible-body'>
+			<div class='node-steps'>
+				<table class='bordered table-results'>
+					<thead>
+						<tr>
+							<th>Status</th>
+							<th>Timestamp</th>
+							<th>Details</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class='log' status='info'>
+							<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+							<td class='timestamp'>5:12:06 PM</td>
+							<td class='step-details'>
+									<span class='badge white-text pink'>Data Insertion In The Record2</span>
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>5:12:08 PM</td>
+							<td class='step-details'>
+									Step: -- Clicking On New Button In App Records List page[addRecord]
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>5:12:09 PM</td>
+							<td class='step-details'>
+									Step: -- Inputting The Data in Number control[AddDataToText_Numebrs_Control] With Test Data [3]
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>5:12:10 PM</td>
+							<td class='step-details'>
+									Step: -- Inputting The Data in Number control[AddDataToText_Numebrs_Control] With Test Data [201]
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>5:12:12 PM</td>
+							<td class='step-details'>
+									Step: -- Inputting The Data in Financial control[AddDataToText_Numebrs_Control] With Test Data [202]
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>5:12:13 PM</td>
+							<td class='step-details'>
+									Step: -- Inputting The Data in Financial control[AddDataToText_Numebrs_Control] With Test Data [203]
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>5:12:14 PM</td>
+							<td class='step-details'>
+									Step: -- Inputting The Data in Number control[AddDataToText_Numebrs_Control] With Test Data [12.345]
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>5:12:15 PM</td>
+							<td class='step-details'>
+									Step: -- Saving The Record[recordSave]
+								
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</li>
+	<li class='node level-2 leaf pass' status='pass' test-id='41'>
+		<div class='collapsible-header'>
+			<div class='node-name'><strong style='color:Lime;'>Loop3: Adding The Records</strong></div>
+			<span class='node-time'>Oct 15, 2020 05:12:16 PM</span>
+			&middot; <span class='node-duration'>0h 0m 9s+796ms</span>
+			<span class='test-status right pass'>pass</span>
+		</div>
+		<div class='collapsible-body'>
+			<div class='node-steps'>
+				<table class='bordered table-results'>
+					<thead>
+						<tr>
+							<th>Status</th>
+							<th>Timestamp</th>
+							<th>Details</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class='log' status='info'>
+							<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+							<td class='timestamp'>5:12:16 PM</td>
+							<td class='step-details'>
+									<span class='badge white-text pink'>Data Insertion In The Record3</span>
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>5:12:19 PM</td>
+							<td class='step-details'>
+									Step: -- Clicking On New Button In App Records List page[addRecord]
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>5:12:20 PM</td>
+							<td class='step-details'>
+									Step: -- Inputting The Data in Number control[AddDataToText_Numebrs_Control] With Test Data [4]
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>5:12:21 PM</td>
+							<td class='step-details'>
+									Step: -- Inputting The Data in Number control[AddDataToText_Numebrs_Control] With Test Data [421]
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>5:12:23 PM</td>
+							<td class='step-details'>
+									Step: -- Inputting The Data in Financial control[AddDataToText_Numebrs_Control] With Test Data [422]
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>5:12:24 PM</td>
+							<td class='step-details'>
+									Step: -- Inputting The Data in Financial control[AddDataToText_Numebrs_Control] With Test Data [423]
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>5:12:25 PM</td>
+							<td class='step-details'>
+									Step: -- Inputting The Data in Number control[AddDataToText_Numebrs_Control] With Test Data [12.346]
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>5:12:26 PM</td>
+							<td class='step-details'>
+									Step: -- Saving The Record[recordSave]
+								
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</li>
+	<li class='node level-2 leaf pass' status='pass' test-id='42'>
+		<div class='collapsible-header'>
+			<div class='node-name'><strong style='color:Lime;'>Loop4: Adding The Records</strong></div>
+			<span class='node-time'>Oct 15, 2020 05:12:27 PM</span>
+			&middot; <span class='node-duration'>0h 0m 9s+676ms</span>
+			<span class='test-status right pass'>pass</span>
+		</div>
+		<div class='collapsible-body'>
+			<div class='node-steps'>
+				<table class='bordered table-results'>
+					<thead>
+						<tr>
+							<th>Status</th>
+							<th>Timestamp</th>
+							<th>Details</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class='log' status='info'>
+							<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+							<td class='timestamp'>5:12:27 PM</td>
+							<td class='step-details'>
+									<span class='badge white-text pink'>Data Insertion In The Record4</span>
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>5:12:30 PM</td>
+							<td class='step-details'>
+									Step: -- Clicking On New Button In App Records List page[addRecord]
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>5:12:31 PM</td>
+							<td class='step-details'>
+									Step: -- Inputting The Data in Number control[AddDataToText_Numebrs_Control] With Test Data [5]
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>5:12:32 PM</td>
+							<td class='step-details'>
+									Step: -- Inputting The Data in Number control[AddDataToText_Numebrs_Control] With Test Data [12346]
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>5:12:33 PM</td>
+							<td class='step-details'>
+									Step: -- Inputting The Data in Financial control[AddDataToText_Numebrs_Control] With Test Data [12347]
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>5:12:35 PM</td>
+							<td class='step-details'>
+									Step: -- Inputting The Data in Financial control[AddDataToText_Numebrs_Control] With Test Data [12348]
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>5:12:36 PM</td>
+							<td class='step-details'>
+									Step: -- Inputting The Data in Number control[AddDataToText_Numebrs_Control] With Test Data [12.347]
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>5:12:37 PM</td>
+							<td class='step-details'>
+									Step: -- Saving The Record[recordSave]
+								
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</li>
+	<li class='node level-2 leaf pass' status='pass' test-id='43'>
+		<div class='collapsible-header'>
+			<div class='node-name'><strong style='color:Lime;'>Loop5: Adding The Records</strong></div>
+			<span class='node-time'>Oct 15, 2020 05:12:38 PM</span>
+			&middot; <span class='node-duration'>0h 0m 9s+719ms</span>
+			<span class='test-status right pass'>pass</span>
+		</div>
+		<div class='collapsible-body'>
+			<div class='node-steps'>
+				<table class='bordered table-results'>
+					<thead>
+						<tr>
+							<th>Status</th>
+							<th>Timestamp</th>
+							<th>Details</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class='log' status='info'>
+							<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+							<td class='timestamp'>5:12:38 PM</td>
+							<td class='step-details'>
+									<span class='badge white-text pink'>Data Insertion In The Record5</span>
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>5:12:41 PM</td>
+							<td class='step-details'>
+									Step: -- Clicking On New Button In App Records List page[addRecord]
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>5:12:42 PM</td>
+							<td class='step-details'>
+									Step: -- Inputting The Data in Number control[AddDataToText_Numebrs_Control] With Test Data [6]
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>5:12:43 PM</td>
+							<td class='step-details'>
+									Step: -- Inputting The Data in Number control[AddDataToText_Numebrs_Control] With Test Data [5679]
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>5:12:44 PM</td>
+							<td class='step-details'>
+									Step: -- Inputting The Data in Financial control[AddDataToText_Numebrs_Control] With Test Data [5680]
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>5:12:46 PM</td>
+							<td class='step-details'>
+									Step: -- Inputting The Data in Financial control[AddDataToText_Numebrs_Control] With Test Data [5681]
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>5:12:47 PM</td>
+							<td class='step-details'>
+									Step: -- Inputting The Data in Number control[AddDataToText_Numebrs_Control] With Test Data [12.348]
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>5:12:48 PM</td>
+							<td class='step-details'>
+									Step: -- Saving The Record[recordSave]
+								
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</li>
+	<li class='node level-2 leaf pass' status='pass' test-id='44'>
+		<div class='collapsible-header'>
+			<div class='node-name'><strong style='color:Lime;'>Loop6: Adding The Records</strong></div>
+			<span class='node-time'>Oct 15, 2020 05:12:49 PM</span>
+			&middot; <span class='node-duration'>0h 0m 10s+272ms</span>
+			<span class='test-status right pass'>pass</span>
+		</div>
+		<div class='collapsible-body'>
+			<div class='node-steps'>
+				<table class='bordered table-results'>
+					<thead>
+						<tr>
+							<th>Status</th>
+							<th>Timestamp</th>
+							<th>Details</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class='log' status='info'>
+							<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+							<td class='timestamp'>5:12:49 PM</td>
+							<td class='step-details'>
+									<span class='badge white-text pink'>Data Insertion In The Record6</span>
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>5:12:52 PM</td>
+							<td class='step-details'>
+									Step: -- Clicking On New Button In App Records List page[addRecord]
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>5:12:53 PM</td>
+							<td class='step-details'>
+									Step: -- Inputting The Data in Number control[AddDataToText_Numebrs_Control] With Test Data [7]
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>5:12:55 PM</td>
+							<td class='step-details'>
+									Step: -- Inputting The Data in Number control[AddDataToText_Numebrs_Control] With Test Data [101]
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>5:12:56 PM</td>
+							<td class='step-details'>
+									Step: -- Inputting The Data in Financial control[AddDataToText_Numebrs_Control] With Test Data [102]
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>5:12:57 PM</td>
+							<td class='step-details'>
+									Step: -- Inputting The Data in Financial control[AddDataToText_Numebrs_Control] With Test Data [103]
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>5:12:58 PM</td>
+							<td class='step-details'>
+									Step: -- Inputting The Data in Number control[AddDataToText_Numebrs_Control] With Test Data [12.349]
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>5:12:59 PM</td>
+							<td class='step-details'>
+									Step: -- Saving The Record[recordSave]
+								
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</li>
+	<li class='node level-2 leaf pass' status='pass' test-id='45'>
+		<div class='collapsible-header'>
+			<div class='node-name'><strong style='color:Lime;'>Loop7: Adding The Records</strong></div>
+			<span class='node-time'>Oct 15, 2020 05:13:01 PM</span>
+			&middot; <span class='node-duration'>0h 0m 9s+676ms</span>
+			<span class='test-status right pass'>pass</span>
+		</div>
+		<div class='collapsible-body'>
+			<div class='node-steps'>
+				<table class='bordered table-results'>
+					<thead>
+						<tr>
+							<th>Status</th>
+							<th>Timestamp</th>
+							<th>Details</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class='log' status='info'>
+							<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+							<td class='timestamp'>5:13:01 PM</td>
+							<td class='step-details'>
+									<span class='badge white-text pink'>Data Insertion In The Record7</span>
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>5:13:03 PM</td>
+							<td class='step-details'>
+									Step: -- Clicking On New Button In App Records List page[addRecord]
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>5:13:04 PM</td>
+							<td class='step-details'>
+									Step: -- Inputting The Data in Number control[AddDataToText_Numebrs_Control] With Test Data [8]
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>5:13:05 PM</td>
+							<td class='step-details'>
+									Step: -- Inputting The Data in Number control[AddDataToText_Numebrs_Control] With Test Data [12]
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>5:13:07 PM</td>
+							<td class='step-details'>
+									Step: -- Inputting The Data in Financial control[AddDataToText_Numebrs_Control] With Test Data [13]
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>5:13:08 PM</td>
+							<td class='step-details'>
+									Step: -- Inputting The Data in Financial control[AddDataToText_Numebrs_Control] With Test Data [14]
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>5:13:09 PM</td>
+							<td class='step-details'>
+									Step: -- Inputting The Data in Number control[AddDataToText_Numebrs_Control] With Test Data [12.350]
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>5:13:10 PM</td>
+							<td class='step-details'>
+									Step: -- Saving The Record[recordSave]
+								
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</li>
+		</ul>
+	</li>
+	<li class='node level-1 leaf pass' status='pass' test-id='46'>
+		<div class='collapsible-header'>
+			<div class='node-name'><strong style='color:Lime;'>Keyword: logout</strong></div>
+			<span class='node-time'>Oct 15, 2020 05:13:15 PM</span>
+			&middot; <span class='node-duration'>0h 0m 1s+160ms</span>
+			<span class='test-status right pass'>pass</span>
+		</div>
+		<div class='collapsible-body'>
+			<div class='node-steps'>
+				<table class='bordered table-results'>
+					<thead>
+						<tr>
+							<th>Status</th>
+							<th>Timestamp</th>
+							<th>Details</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class='log' status='info'>
+							<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+							<td class='timestamp'>5:13:15 PM</td>
+							<td class='step-details'>
+									<span class='badge white-text pink'>|Logging Out From The Application|</span>
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>5:13:15 PM</td>
+							<td class='step-details'>
+									Step: -- Clicking On User Account[userAccount]
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>5:13:17 PM</td>
+							<td class='step-details'>
+									Step: -- Clickng On Logout[logout]
+								
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</li>
+</ul>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- subview left -->
+	<div class='subview-right left'>
+		<div class='view-summary'>
+			<h5 class='test-name'></h5>
+			<div id='step-filters' class="right">
+				<span class="blue-text" status="info" alt="info" title="info"><i class="material-icons">info_outline</i></span>
+				<span class="green-text" status="pass" alt="pass" title="pass"><i class="material-icons">check_circle</i></span>
+				<span class="red-text" status="fail" alt="fail" title="fail"><i class="material-icons">cancel</i></span>
+				<span class="red-text text-darken-4" status="fatal" alt="fatal" title="fatal"><i class="material-icons">cancel</i></span>
+				<span class="pink-text text-lighten-1" status="error" alt="error" title="error"><i class="material-icons">error</i></span>
+				<span class="orange-text" alt="warning" status="warning" title="warning"><i class="material-icons">warning</i></span>
+				<span class="teal-text" status="skip" alt="skip" title="skip"><i class="material-icons">redo</i></span>
+				<span status="clear" alt="Clear filters" title="Clear filters"><i class="material-icons">clear</i></span>
+			</div>
+		</div>
+	</div>
+	<!-- subview right -->
+</div>
+<!-- test view --><div id='category-view' class='view hide'>
+	<section id='controls'>
+		<div class='controls grey lighten-4'>
+			<!-- search -->
+			<div class='chip transparent' alt='Search Tests' title='Search Tests'>
+				<a href="#" class='search-div'>
+				<i class='material-icons'>search</i> Search
+				</a>
+				<div class='input-field left hide'>
+					<input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+				</div>
+			</div>
+			<!-- search -->
+		</div>
+	</section>
+	<div class='subview-left left'>
+		<div class='view-summary'>
+			<ul id='category-collection' class='category-collection'>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>Group:Smoke</span>
+						<span class='category-status right'>
+						<span class='label pass'>1</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span class='label green accent-4 white-text'>Passed: 1</span>
+							
+							
+						</div>
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Oct 15, 2020 05:09:20 PM</td>
+										<td class='linked' test-id='1'>WAVE-APPS-TC-01</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class='subview-right left'>
+		<div class='view-summary'>
+			<h5 class='category-name'></h5>
+		</div>
+	</div>
+</div>
+<!-- category view --><!-- exception view --><div id='author-view' class='view hide'>
+	<section id='controls'>
+		<div class='controls grey lighten-4'>
+			<!-- search -->
+			<div class='chip transparent' alt='Search Authors' title='Search Authors'>
+				<a href="#" class='search-div'>
+				<i class='material-icons'>search</i> Search
+				</a>
+				<div class='input-field left hide'>
+					<input id='search-tests' type='text' class='validate browser-default' placeholder='Search Authors...'>
+				</div>
+			</div>
+			<!-- search -->
+		</div>
+	</section>
+	<div class='subview-left left'>
+		<div class='view-summary'>
+			<ul id='author-collection' class='author-collection'>
+				<li class='author displayed active'>
+					<div class='author-heading'>
+						<span class='author-name'>AutomationEngineer:VivekReddy</span>
+						<span class='author-status right'>
+						<span class='label pass'>1</span>
+						</span>
+					</div>
+					<div class='author-content hide'>
+						<div class='author-status-counts'>
+							<span class='label green accent-4 white-text'>Passed: 1</span>
+							
+							
+						</div>
+						<div class='author-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Oct 15, 2020 05:09:20 PM</td>
+										<td class='linked' test-id='1'>WAVE-APPS-TC-01</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class='subview-right left'>
+		<div class='view-summary'>
+			<h5 class='author-name'></h5>
+		</div>
+	</div>
+</div>
+<div id='dashboard-view' class='view hide'>
+	<div class='card-panel transparent np-v'>
+		<h5>Dashboard</h5>
+
+		<div class='row'>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Tests
+					<div class='panel-lead'>1</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Steps
+					<div class='panel-lead'>37</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Start
+					<div class='panel-lead'>Oct 15, 2020 05:08:52 PM</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+			 		End
+			 		<div class='panel-lead'>Oct 15, 2020 05:08:52 PM</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Time Taken
+					<div class='panel-lead'>0h 0m 0s+0ms</div>
+				</div>
+			</div>
+			<div class='col s4'>
+				<div class='card-panel dashboard-environment'>
+					<span class='right label cyan white-text'>Environment</span><p>&nbsp;</p>
+					
+					<table>
+						<tr>
+							<th>Name</th>
+							<th>Value</th>
+						</tr>
+							<tr>
+								<td>OS</td>
+								<td>Windows</td>
+							</tr>
+							<tr>
+								<td>Browser</td>
+								<td>Chrome</td>
+							</tr>
+					</table>
+				</div>
+			</div>
+			<div class='col s6'>
+				<div class='card-panel dashboard-categories'>
+					<span class='right label cyan white-text'>Categories</span><p>&nbsp;</p>
+					
+					<table>
+						<tr>
+							<th>Name</th>
+							<th>Passed</th>
+							<th>Failed</th>
+							<th>Others</th>
+							<th>Passed %</th>
+						</tr>
+						<tr>
+							<td>Group:Smoke</td>
+							<td>1</td>
+							<td>0</td>
+							<td>0</td>
+							<td>
+									100%
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- dashboard view -->
+<!-- testrunner-logs view -->		</div>
+		<!-- container -->
+		<script>
+			var statusGroup = {
+				passParent: 1,
+				failParent: 0,
+				fatalParent: 0,
+				errorParent: 0,
+				warningParent: 0,
+				skipParent: 0,
+				exceptionsParent: 0,
+				
+				passChild: 37,
+				failChild: 0,
+				fatalChild: 0,
+				errorChild: 0,
+				warningChild: 0,
+				skipChild: 0,
+				infoChild: 0,
+				debugChild: 0,
+				exceptionsChild: 0,
+				
+				passGrandChild: 0,
+				failGrandChild: 0,
+				fatalGrandChild: 0,
+				errorGrandChild: 0,
+				warningGrandChild: 0,
+				skipGrandChild: 0,
+				infoGrandChild: 0,
+				debugGrandChild: 0,
+				exceptionsGrandChild: 0,
+			};
+		</script>
+		<script>
+			var timeline = {
+			        "WAVE-APPS-TC-01":236.628
+			};
+		</script>
+		<script src='https://cdn.rawgit.com/extent-framework/extent-github-cdn/e9ccc29bd18c7914697075f44948d0913e462478/v3html/js/extent.js' type='text/javascript'></script>
+		<script type='text/javascript'>
+		</script>
+	</body>
+</html>
