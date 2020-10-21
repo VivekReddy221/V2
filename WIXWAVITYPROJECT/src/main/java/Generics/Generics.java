@@ -16,6 +16,7 @@ import java.util.concurrent.TimeUnit;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -42,7 +43,7 @@ public class Generics
 	
 	
 	
-	public void LanchBrowser(String browserName,String URL) throws IOException
+	public void LanchBrowser(String browserName,String URL) throws IOException, AWTException
 	{ 
 		asert = new SoftAssert();
 		
@@ -70,6 +71,8 @@ public class Generics
 		}
 		if(driver!=null)
 		{
+			ZoomOut();
+			
 		log._INFO("Browser successfully Stared..");
 		
 		log._INFO("Deleting All The Coockies");
@@ -117,12 +120,23 @@ public class Generics
 	public void HighLightElement(WebElement element,WebDriver driver) throws InterruptedException
 	{
 		JavascriptExecutor js=((JavascriptExecutor)driver);
-		js.executeScript("arguments[0].setAttribute('style', 'border: 2px dashed red;');",element);
+		js.executeScript("arguments[0].setAttribute('style', 'border: 2px dashed Red;');",element);
 		Thread.sleep(1000);
 		js.executeScript("arguments[0].setAttribute('style', 'border: 2px dashed lime;');",element);
 		js.executeScript("arguments[0].setAttribute('style', '');",element);
 	}
 	
+	public void ZoonIn() throws AWTException
+	{
+		driver.findElement(By.tagName("html")).sendKeys(Keys.chord(Keys.CONTROL, "0"));
+	}
+	
+	public void ZoomOut()
+	{
+		String zoomOut = "document.body.style.zoom='80%'";
+		JavascriptExecutor js=((JavascriptExecutor)driver);
+		js.executeScript(zoomOut);
+	}
 	public void input(String ElementName,String Location,String TestData) throws InterruptedException
 	{
 		
@@ -354,6 +368,29 @@ public class Generics
 			log._ERROR("Element ["+ElementName+"] Is Not Found at Location ="+Location);
 		}
 }
+	
+	public void dropAndDropByOffeset(String ElementName,String Location,int xOffset,int yOffset) throws InterruptedException
+	{
+		log._INFO("Verifying The Element ["+ElementName+"] at Location ="+Location);
+		if(VisibiltyOfElementLocated(UIElement(Location)) == true)
+		{
+			log._INFO("Element ["+ElementName+"] Is Found"+" at Location ="+Location);
+			if(ElementIsEnabled(UIElement(Location))== true)
+			{
+				HighLightElement(UIElement(Location),driver);
+				
+				new Actions(driver).dragAndDropBy(UIElement(Location), xOffset*5,0).build().perform();
+			}
+			else
+			{
+				log._ERROR("Element ["+ElementName+"] Is In Disable Mode at Location ="+Location);
+			}
+		}
+		else
+		{
+			log._ERROR("Element ["+ElementName+"] Is Not Found at Location ="+Location);
+		}
+}
 	public boolean dataValidation(String Location,String data)
 	{
 		String response = UIElement(Location).getText();
@@ -410,7 +447,25 @@ public class Generics
 		log._INFO("Clicking On Open in Window");
 		robot.keyPress(KeyEvent.VK_ENTER);
 	}
-	
+	public void copyPaste(String TestData) throws AWTException, InterruptedException
+	{
+		StringSelection stringSelection = new StringSelection(TestData);
+        Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
+        clipboard.setContents(stringSelection, stringSelection);
+        
+        Robot robot=new Robot();
+		
+		log._INFO("Inputting The data");
+		robot.keyPress(KeyEvent.VK_CONTROL);
+		robot.keyPress(KeyEvent.VK_A);
+		
+		robot.keyPress(KeyEvent.VK_CONTROL);
+		robot.keyPress(KeyEvent.VK_V);
+		
+		//Release key
+		robot.keyRelease(KeyEvent.VK_CONTROL);
+		robot.keyRelease(KeyEvent.VK_CONTROL);
+	}
 	public void softAssert(String Location,String data) throws IOException
 	{
 		
@@ -449,7 +504,10 @@ public class Generics
 				FileUtils.copyFile(src, new File("Reports\\ScreenShots\\"+driver.getCurrentUrl()+".png"));
 	}
 	
-	
+	public String getData(String xpath)
+	{
+		return UIElement(xpath).getText();
+	}
 
 	
 }

@@ -17,13 +17,18 @@ public class StringClsUtil
 		spitData = data.split(";");
 		log._INFO("Data Spitted: [");
 		log._INFO("DataSet |--->");
+		
+		String[] spitData1 = new String[spitData.length];
+		
 		for(int i=0;i<spitData.length;i++)
 		{
 			log._INFO(" "+spitData[i]);
+			spitData1[i] = spitData[i].trim();
+			
 		}
 		log._INFO("DataSet --->|");
 		log._INFO("Data Spitted: ]");
-		return spitData;
+		return spitData1;
 	}
 	public String[] SplitData1(String data)
 	{
@@ -31,13 +36,15 @@ public class StringClsUtil
 		spitData = data.split(":");
 		log._INFO("Data Spitted: [");
 		log._INFO("DataSet |--->");
+		String[] spitData1 = new String[spitData.length];
 		for(int i=0;i<spitData.length;i++)
 		{
 			log._INFO(" "+spitData[i]);
+			spitData1[i] = spitData[i].trim();
 		}
 		log._INFO("DataSet --->|");
 		log._INFO("Data Spitted: ]");
-		return spitData;
+		return spitData1;
 	}
 	
 	public String ReplaceString(String Xpath,String replaceWith)
@@ -51,6 +58,13 @@ public class StringClsUtil
 	{
 		log._INFO("Expression : [*] is in String:"+Xpath+"is replacing with "+replaceWith);
 		replace = Xpath.replace("[*]",replaceWith);
+		log._INFO("After Conversion: "+replace);
+		return replace;
+	}
+	public String ReplaceString2(String Xpath,String replaceWith)
+	{
+		log._INFO("Expression : [%] is in String:"+Xpath+"is replacing with "+replaceWith);
+		replace = Xpath.replace("[%]",replaceWith);
 		log._INFO("After Conversion: "+replace);
 		return replace;
 	}

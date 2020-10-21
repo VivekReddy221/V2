@@ -20,7 +20,7 @@ public class StepBase
 	SpecificType spec;
 	String TestData1[][]={ {"testData","NO"}};
 	
-	public void TestCaseName(String testCaseId,String TestDesc)
+	public void TestCaseName(String testCaseId,String TestDesc,String testingType)
 	{
 		log = new Logs();
 		log._INFO("**********************************************************-S-T-A-R-T-****************************************************************************************");
@@ -29,7 +29,7 @@ public class StepBase
 		log._INFO("::::::::::::::::::::::::::::::::::"+testCaseId+"-"+TestDesc+"::::::::::::::::::::::::::::::::::::::::::::::::::::");
 		log._INFO(":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::");
 		log._INFO("-------------------------------------------------------------------------------------------------------------------------------------------------------------");
-		log.CreateTestCase(testCaseId, TestDesc);
+		log.CreateTestCase(testCaseId, TestDesc,testingType);
 	}
 
 	public void Step(String Des,String action) throws InterruptedException, IOException, AWTException
@@ -83,7 +83,7 @@ public class StepBase
 			else
 			{
 				Location = new StringClsUtil().ReplaceString(new XpathHub().xpathGetter(elementName),TestData);
-					Location1 = new XpathHub().xpathGetter(elementName1);
+				Location1 = new XpathHub().xpathGetter(elementName1);
 			}
 			}
 			else
@@ -140,6 +140,9 @@ public class StepBase
 						break;
 			case "JSinput": log.EXTENT_INFO("-- "+Des+"["+elementName+"]"+" With Test Data "+"["+TestData+"]");
 						gen.JSinput(elementName, Location, TestData);
+						break;
+			case "copyPaste": log.EXTENT_INFO("-- "+Des);
+						gen.copyPaste(TestData);
 						break;
 			default: {
 					log._ERROR("Given Action Is In Out Of Scope");

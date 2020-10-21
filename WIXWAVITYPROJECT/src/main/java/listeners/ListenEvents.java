@@ -1,5 +1,6 @@
 package listeners;
 
+import java.awt.AWTException;
 import java.io.IOException;
 
 import org.testng.ITestContext;
@@ -35,7 +36,7 @@ public class ListenEvents implements ITestListener
 		
 		try
 		{
-			String workbooks[] = {"TestData.xlsx","ConfigFile.xlsx"}; // All Workbooks Initializations
+			String workbooks[] = {"AppsTestData.xlsx","ConfigFile.xlsx"}; // All Workbooks Initializations
 			
 			ob.OpenAWBooks(workbooks);
 		}
@@ -46,7 +47,7 @@ public class ListenEvents implements ITestListener
 		}
 		try
 		{
-			xpath.XpathHubStore("WebUIMaps.xlsx","WebUIMaps"); // XPath Initializer
+			xpath.XpathHubStore("WebUIMap.xlsx","WebUIMaps"); // XPath Initializer
 			
 		}
 		catch (IOException e) 
@@ -64,6 +65,9 @@ public class ListenEvents implements ITestListener
 		try {
 			gen.LanchBrowser("Chrome","http://tenant42.wavity.info");
 		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (AWTException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}

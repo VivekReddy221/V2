@@ -18,9 +18,11 @@ import xpath.hub.XpathHub;
 public class SpecificType extends StepBase
 {
 	String dataSplit[];
-	String xpathConversion;
+	String xpathConversion,xpathConversion1;
 	
     static Logs log = new Logs();
+    
+    static int j;
     
     static String testData[][],
 	appCreationData[][],
@@ -100,17 +102,17 @@ public class SpecificType extends StepBase
 	public void login(String data[][]) throws InterruptedException, IOException, AWTException
 	{
 		Step("Verfiying The Login Card","verify","loginCard");
-		Step("Verfiying The Wavity Logo","verify","logo");
+		//Step("Verfiying The Wavity Logo","verify","logo");
 
 		Step("Entering The Data In UserName","input","userName",data[0][0]);
 		Step("Clicking The Next Button","click","next");
 		
 		Step("Verfiying The Login Card","verify","loginCard");
-		Step("Verfiying The Wavity Logo","verify","logo");
+		//Step("Verfiying The Wavity Logo","verify","logo");
 
 		Step("Entering The Data In PassWord","input","passWord",data[0][1]);
 		
-		Step("Verfiying Forgot Password Link","verify","forgotPassword");
+		//Step("Verfiying Forgot Password Link","verify","forgotPassword");
 		Step("Verfiying Back Button","verify","back");
 		
 		Step("Clicking The Element Login","click","continue");
@@ -148,7 +150,7 @@ public class SpecificType extends StepBase
 		
 		//new Generics().attachTheImage(data[0][0]);
 		
-		Step("Entering App Name","input","enterAppName",data[0][1]+DateSet());
+		Step("Entering App Name","input","enterAppName",data[0][1]);
 		Step("Entering App Description","input","appDescription",data[0][2]);
 		Step("Clicking on App Type","select","selectAppType",data[0][3]);
 		Step("Clicking On Create Button","click","clickCreateApp");
@@ -157,6 +159,8 @@ public class SpecificType extends StepBase
 	public void addControls_setProprties(String data[][]) throws InterruptedException, IOException, AWTException
 	{
 		addControlsData = data;
+		
+		
 		
 		for(int i=0;i<data.length;i++)
 		{
@@ -170,12 +174,181 @@ public class SpecificType extends StepBase
 		Step("Entering App Control Label Name","input","controlLabel;"+xpathConversion,"YES",data[i][2]);
 		//new Generics().Sleep(2000);
 		
-		addControlProperties(data[i][3],data[i][1]);
+		if(data[i][1].contains("Dependent") || data[i][1].contains("Reference"))
+		{
+			
+			log.LoopIndex("Adding Control Objects for The Sub Control","Sub-Control"+": "+data[i][1]);
+			j=i;
+			addControlObjectsForDependents(data[i][1],data[i][4]);
+			addControlProperties(data[i][3],data[i][1]);
+		}
+		else
+		{
+		if(data[i][0].contains("Category"))
+		{
+			log.LoopIndex("Adding Control Objects for The Sub Control","Sub-Control"+": "+data[i][1]);
+			j =i;
+			addControlObjects(data[i][1],data[i][4]);
+			addControlProperties(data[i][3],data[i][1]);
+		}
+		else
+		{
 		
+		addControlProperties(data[i][3],data[i][1]);
+		}
+		
+		}
 		}
 		
 		Step("Saving An Application","click","saveApp");
 		new Generics().Sleep(5000);
+	}
+	
+	public void addControlObjectsForDependents(String subControlName,String data) throws InterruptedException, IOException, AWTException
+	{
+		String[] controlOb = new StringClsUtil().SplitData(data);
+		j++;
+		
+		for(int i=0;i<controlOb.length;i++)
+		{
+			String[] controlOb1 = new StringClsUtil().SplitData1(controlOb[i]);
+			
+			if(subControlName.contains("Reference"))
+			{
+				
+				xpathConversion = new StringClsUtil().ReplaceString(new XpathHub().xpathGetter("DependentOb"),Integer.toString(j));
+				xpathConversion = new StringClsUtil().ReplaceString1(xpathConversion,controlOb1[0]);
+				
+				Step("Clicking The Dropdown","click",xpathConversion,"YES","NO");
+				
+				xpathConversion = new StringClsUtil().ReplaceString(new XpathHub().xpathGetter("refObjSearch"),Integer.toString(j));
+				xpathConversion = new StringClsUtil().ReplaceString1(xpathConversion,controlOb1[0]);
+	 
+				
+				Step("Searching The Value to select","input","refObjSearch;"+xpathConversion,"YES",controlOb1[1]);
+				
+				xpathConversion = new StringClsUtil().ReplaceString(new XpathHub().xpathGetter("refObj"),Integer.toString(j));
+				xpathConversion = new StringClsUtil().ReplaceString1(xpathConversion,controlOb1[0]);
+				xpathConversion = new StringClsUtil().ReplaceString2(xpathConversion,controlOb1[1]);
+				
+				Step("Clicking The Option in"+controlOb1[0]+" control","click","selectObject;"+xpathConversion,"YES","NO");
+				
+			}
+			else if(subControlName.contains("Dependent Multi Values"))
+			{
+				if(controlOb1[0].contains("Depends On") ||controlOb1[0].contains("Match"))
+				{
+					new Generics().Sleep(10000);
+					xpathConversion = new StringClsUtil().ReplaceString(new XpathHub().xpathGetter("DependentOb1"),Integer.toString(j));
+					xpathConversion = new StringClsUtil().ReplaceString1(xpathConversion,controlOb1[0]);
+					
+					Step("Selecting The Object from dropdown","select","DependentOb1;"+xpathConversion,"YES",controlOb1[1]);
+					
+				}
+				else
+				{
+					new Generics().Sleep(10000);
+					xpathConversion = new StringClsUtil().ReplaceString(new XpathHub().xpathGetter("clickLabelObject"),Integer.toString(j));
+					xpathConversion = new StringClsUtil().ReplaceString1(xpathConversion,controlOb1[0]);
+					
+					Step("Clicking On the Dropdown Label","click","clickLabelObject;"+xpathConversion,"YES","NO");
+					
+					xpathConversion = new StringClsUtil().ReplaceString(new XpathHub().xpathGetter("DependentOb"),Integer.toString(j));
+					xpathConversion = new StringClsUtil().ReplaceString1(xpathConversion,controlOb1[0]);
+					
+					Step("Clicking The Dropdown","click",xpathConversion,"YES","NO");
+					
+					xpathConversion = new StringClsUtil().ReplaceString(new XpathHub().xpathGetter("refObjSearch"),Integer.toString(j));
+					xpathConversion = new StringClsUtil().ReplaceString1(xpathConversion,controlOb1[0]);
+		 
+					
+					Step("Searching The Value to select","input","refObjSearch;"+xpathConversion,"YES",controlOb1[1]);
+					
+					xpathConversion = new StringClsUtil().ReplaceString(new XpathHub().xpathGetter("refObj"),Integer.toString(j));
+					xpathConversion = new StringClsUtil().ReplaceString1(xpathConversion,controlOb1[0]);
+					xpathConversion = new StringClsUtil().ReplaceString2(xpathConversion,controlOb1[1]);
+					
+					Step("Clicking The Option in"+controlOb1[0]+" control","click","selectObject;"+xpathConversion,"YES","NO");
+				}
+			}
+			else
+			{
+			if(controlOb1[0].contains("Application"))
+			{
+				
+				xpathConversion = new StringClsUtil().ReplaceString(new XpathHub().xpathGetter("DependentOb"),Integer.toString(j));
+				xpathConversion = new StringClsUtil().ReplaceString1(xpathConversion,controlOb1[0]);
+				
+				Step("Clicking The Dropdown","click",xpathConversion,"YES","NO");
+				
+				xpathConversion = new StringClsUtil().ReplaceString(new XpathHub().xpathGetter("refObjSearch"),Integer.toString(j));
+				xpathConversion = new StringClsUtil().ReplaceString1(xpathConversion,controlOb1[0]);
+	 
+				
+				Step("Searching The Value to select","input","refObjSearch;"+xpathConversion,"YES",controlOb1[1]);
+				
+				xpathConversion = new StringClsUtil().ReplaceString(new XpathHub().xpathGetter("refObj"),Integer.toString(j));
+				xpathConversion = new StringClsUtil().ReplaceString1(xpathConversion,controlOb1[0]);
+				xpathConversion = new StringClsUtil().ReplaceString2(xpathConversion,controlOb1[1]);
+				
+				Step("Clicking The Option in"+controlOb1[0]+" control","click","selectObject;"+xpathConversion,"YES","NO");
+				
+			}
+			else
+			{
+				xpathConversion = new StringClsUtil().ReplaceString(new XpathHub().xpathGetter("DependentOb1"),Integer.toString(j));
+				xpathConversion = new StringClsUtil().ReplaceString1(xpathConversion,controlOb1[0]);
+				
+				Step("Selecting The Object from dropdown","select","DependentOb1;"+xpathConversion,"YES",controlOb1[1]);
+			}
+			
+			}
+		}
+		
+		
+	}
+
+	public void addControlObjects(String subControlName,String data) throws InterruptedException, IOException, AWTException
+	{
+
+		if(subControlName.contains("Dropdown")||subControlName.contains("Linear")||subControlName.contains("Segment"))
+		{
+			j++;
+			int b=0; 
+			
+			String[] controlOb = new StringClsUtil().SplitData(data);
+			
+			for(int i=0;i<controlOb.length;i++)
+			{
+				String[] controlOb1 = new StringClsUtil().SplitData1(controlOb[i]);
+				
+				xpathConversion = new StringClsUtil().ReplaceString(new XpathHub().xpathGetter("selectControlObj"),Integer.toString(j));
+				xpathConversion1 = new StringClsUtil().ReplaceString(new XpathHub().xpathGetter("AddAnOptionInCategory"),Integer.toString(j));
+				
+				if(controlOb1[0].contains("Value"))
+				{
+
+					if(i!=0)
+					{
+						Step("Clicking On Add Option In Category Controls In App Designer","click","[AddAnOptionInCategory];"+xpathConversion1,"YES","NO");
+					}
+					xpathConversion = new StringClsUtil().ReplaceString1(xpathConversion,controlOb1[0]); 
+					xpathConversion = new StringClsUtil().ReplaceString2(xpathConversion,Integer.toString(i+2)); 
+					Step("Selecting The "+controlOb1[0] +" Control Object","input","[selectControlObj:"+controlOb1[0]+"];"+xpathConversion,"YES",controlOb1[1]);
+					
+				}
+				else
+				{
+					if(controlOb[1]!=null)
+					{
+					xpathConversion = new StringClsUtil().ReplaceString1(xpathConversion,controlOb1[0]); 
+					xpathConversion = new StringClsUtil().ReplaceString2(xpathConversion,Integer.toString(2+b)); 
+					Step("Selecting The "+controlOb1[0] +" Control Object","input","[selectControlObj:"+controlOb1[0]+"];"+xpathConversion,"YES",controlOb1[1]);
+					}
+					b=b+1;
+				}
+			}
+		}
 	}
 	
 	//To Add Control properties
@@ -201,15 +374,10 @@ public class SpecificType extends StepBase
 				
 			for(int m=0;m<propSpit.length;m++)
 			{
-				String[] propSpit1 = new StringClsUtil().SplitData1(propSpit[m]);
-				
-				for(int n=0;n<propSpit1.length;n++)
-				{
-					if(propSpit1[n]!=null)
+					if(propSpit[m]!=null)
 					{
-						selectPropertyType(propSpit1[n],(m+1));
+						selectPropertyType(propSpit[m],(m+1));
 					}
-				}
 			}
 		    }
 			
@@ -221,15 +389,12 @@ public class SpecificType extends StepBase
 				{
 					String[] propSpit1 = new StringClsUtil().SplitData1(propSpit[m]);
 					
-					for(int n=0;n<propSpit1.length;n++)
-					{
-						if(propSpit1[n]!=null)
+						if(propSpit1[m]!=null)
 						{
 							
-							selectPropertyType(propSpit1[n],(m+1));
+							selectPropertyType(propSpit[m],(m+1));
 							
 						}
-					}
 				}
 			}
 			else
@@ -246,9 +411,11 @@ public class SpecificType extends StepBase
 	{
 		String 
 		
-		clickRelated="|Required|Deprecated|Read only|Allow data import|Hide|One time entry|Script|Font color:|Allow negative|Populate on create|",
-		selectable="|Input field type:|Font size:|Font weight:|Font style:|Editor:|Number type:|Scale:|",
-		inputable="|Help message:|Default value:|Max length:|Field placeholder:|Placeholder|";
+		clickRelated="|Required|Deprecated|Read only|Allow data import|Hide|One time entry|Script|Font color:|Allow negative|Populate on create|option while record entry:"
+					+ "System date as prefix|System date as suffix| ",
+		selectable="|Input field type:|Font size:|Font weight:|Font style:|Editor:|Number type:|Scale:|Prefix separator:|Suffix separator:|Dateformat:|Selection type:"
+					+"Timezone:|Min selection:|Max selection:|",
+		inputable="|Help message:|Default value:|Max length:|Field placeholder:|Placeholder|Prefix:|Suffix:|";
 		
 		String prop[] = new StringClsUtil().SplitData1(propertyType);
 		
@@ -276,6 +443,10 @@ public class SpecificType extends StepBase
 			xpathConversion = new StringClsUtil().ReplaceString1(xpathConversion,Integer.toString(looper)); 
 			Step("Selecting The Property Data In The "+prop[0] +"property","select","[selectProperty:"+prop[0]+"];"+xpathConversion,"YES",prop[1]);
 			
+		}
+		else
+		{
+			log._ERROR("Property Not Found: "+prop[0]);
 		}
 		
 	}
@@ -313,8 +484,16 @@ public class SpecificType extends StepBase
 			if(endLooper<data[0].length)	
 			{
 			log.LoopIndex("Adding The Records", "Data Insertion In The Record"+(i+1));
+			
+			if(appCreationData[0][3].contains("Company"))
+			{
 			new Generics().specificWait(new XpathHub().xpathGetter("addRecord"),30);
 			Step("Clicking On New Button In App Records List page","click","addRecord");
+			}
+			else
+			{
+				new Generics().specificWait(new XpathHub().xpathGetter("addRecord1"),30);
+				Step("Clicking On New Button In App Records List page","click","addRecord1");
 			}
 			
 		
@@ -329,6 +508,10 @@ public class SpecificType extends StepBase
 				case "Text": addDataToText(Subcontrol[j],ControlLabels[j],data[j][i]); break;
 				
 				case "Numbers" : addDataToNumbers(Subcontrol[j],ControlLabels[j],data[j][i]); break;
+				
+				case "Category": addDataToCategory(Subcontrol[j],ControlLabels[j],data[j][i]); break;
+				
+				case "Progress": addDataToProgress(Subcontrol[j],ControlLabels[j],data[j][i]);break;
 			}
 			
 			}
@@ -340,7 +523,22 @@ public class SpecificType extends StepBase
 		
 		new Generics().Sleep(4000);
 	}
-	
+	}
+	public void addDataToProgress(String subControl,String ControlLabel,String data) throws IOException, InterruptedException
+	{
+		switch(subControl)
+		{
+		case "Single Slider": 	xpathConversion = new StringClsUtil().ReplaceString(new XpathHub().xpathGetter("CurrentSliderValue"),ControlLabel);
+								String get = new Generics().getData(xpathConversion);
+								get = get.replace("%","");
+								int i = Integer.parseInt(get);
+								i = Integer.parseInt(data)-i;
+							  
+								xpathConversion = new StringClsUtil().ReplaceString(new XpathHub().xpathGetter("SliderStart"),ControlLabel);
+								new Generics().dropAndDropByOffeset("SliderStart", xpathConversion,i,0);
+								break;
+		}
+	}
 	public void addDataToText(String subControl,String ControlLabel,String data) throws InterruptedException, IOException, AWTException
 	{
 		 switch(subControl)
@@ -382,7 +580,7 @@ public class SpecificType extends StepBase
 					xpathConversion = new StringClsUtil().ReplaceString(new XpathHub().xpathGetter("AddDataToText_Numebrs_Control"),ControlLabel);
 					xpathConversion = new StringClsUtil().ReplaceString1(xpathConversion,Integer.toString(1));
 					Step("Clicking On The Text Block","click",xpathConversion,"YES","NO");
-					Step("Inputting The Data in "+subControl+" control","input","AddDataToText_Numebrs_Control;"+xpathConversion,"YES",data);
+					new Generics().copyPaste(data);
 				}
 				break;
 			}
@@ -410,9 +608,115 @@ public class SpecificType extends StepBase
 			}
 	}
 	
+	public void addDataToCategory(String subControl,String ControlLabel,String data) throws InterruptedException, IOException, AWTException
+	{
+		 switch(subControl)
+			{
+				case "Dropdown": 
+				{
+					String[] dropSpit = new StringClsUtil().SplitData(data);
+					
+					for(int i=0;i<dropSpit.length;i++)
+					{
+						
+						
+						if(dropSpit[i].contains("Other"))
+						{
+							String[] dropSpit1 = new StringClsUtil().SplitData1(dropSpit[i]);
+							OtherSelection(ControlLabel,dropSpit1[0],dropSpit1[1]);
+						}
+						else
+						{
+					xpathConversion = new StringClsUtil().ReplaceString(new XpathHub().xpathGetter("LabelInspect"),ControlLabel);
+					Step("Clicking The Dropdown","click",xpathConversion,"YES","NO");
+					
+					xpathConversion = new StringClsUtil().ReplaceString(new XpathHub().xpathGetter("AddDataToDropDown"),ControlLabel);
+					Step("Clicking The Dropdown","click","AddDataToDropDown;"+xpathConversion,"YES","NO");
+					
+					Step("Searching The Value to select","input","dropDownSearch",dropSpit[i]);
+					
+					xpathConversion = new StringClsUtil().ReplaceString(new XpathHub().xpathGetter("AddDataToDropDown1"),dropSpit[i]);
+					Step("Clicking The Option in"+ControlLabel+" "+subControl+" control","click","AddDataToDropDown1;"+xpathConversion,"YES","NO");
+						}
+					
+					}
+				}
+				break;
+				case "Linear": 
+				{
+					String[] dropSpit = new StringClsUtil().SplitData(data);
+					
+					for(int i=0;i<dropSpit.length;i++)
+					{
+						
+						if(dropSpit[i].contains("Other"))
+						{
+							String[] dropSpit1 = new StringClsUtil().SplitData1(dropSpit[i]);
+							OtherSelection(ControlLabel,dropSpit1[0],dropSpit1[1]);
+						}
+						else
+						{
+					
+						xpathConversion = new StringClsUtil().ReplaceString(new XpathHub().xpathGetter("OtherDropdown_LinearDataClick"),ControlLabel);
+						xpathConversion = new StringClsUtil().ReplaceString1(xpathConversion,dropSpit[i]);
+						Step("Clikcing On The Option for the control:"+ControlLabel,"click","OtherDropdown_LinearDataClick;"+xpathConversion,"YES",dropSpit[i]);
+						}
+					}
+				}
+				break;
+				case "Segment": 
+				{
+					String[] dropSpit = new StringClsUtil().SplitData(data);
+					
+					for(int i=0;i<dropSpit.length;i++)
+					{
+						
+						if(dropSpit[i].contains("Other"))
+						{
+							String[] dropSpit1 = new StringClsUtil().SplitData1(dropSpit[i]);
+							OtherSelection(ControlLabel,dropSpit1[0],dropSpit1[1]);
+						}
+						else
+						{
+					
+						xpathConversion = new StringClsUtil().ReplaceString(new XpathHub().xpathGetter("SegementClick"),ControlLabel);
+						xpathConversion = new StringClsUtil().ReplaceString1(xpathConversion,dropSpit[i]);
+						Step("Clicking on the option for "+subControl+" control","click","AddDataToText_Numebrs_Control;"+xpathConversion,"YES",dropSpit[i]);
+						}
+					}
+				}
+				break;
+			}
+	}
 	
 	
+	public void dropDownSelect(String ControlLabel,String data) throws InterruptedException, IOException, AWTException
+	{
+		xpathConversion = new StringClsUtil().ReplaceString(new XpathHub().xpathGetter("LabelInspect"),ControlLabel);
+		Step("Clicking The Dropdown","click",xpathConversion,"YES","NO");
+		
+		xpathConversion = new StringClsUtil().ReplaceString(new XpathHub().xpathGetter("AddDataToDropDown"),ControlLabel);
+		Step("Clicking The Dropdown","click",xpathConversion,"YES","NO");
+		
+		Step("Searching The Value to select","input","dropDownSearch",data);
+		
+		xpathConversion = new StringClsUtil().ReplaceString(new XpathHub().xpathGetter("AddDataToDropDown1"),data);
+		Step("Clicking The Option in"+ControlLabel+" control","click","AddDataToDropDown1;"+xpathConversion,"YES","NO");
+	}
 	
+	public void OtherSelection(String ControlLabel,String ControlLabel1,String data) throws IOException, InterruptedException, AWTException
+	{
+		xpathConversion = new StringClsUtil().ReplaceString(new XpathHub().xpathGetter("LabelInspect"),ControlLabel);
+		Step("Clicking The Dropdown","click",xpathConversion,"YES","NO");
+		
+		xpathConversion = new StringClsUtil().ReplaceString(new XpathHub().xpathGetter("OtherDropdown_LinearDataClick"),ControlLabel);
+		xpathConversion = new StringClsUtil().ReplaceString1(xpathConversion,ControlLabel1);
+		Step("Clicking The Dropdown","click",xpathConversion,"YES","NO");
+		
+		xpathConversion = new StringClsUtil().ReplaceString(new XpathHub().xpathGetter("OtherDropdownDataInput"),ControlLabel);
+		xpathConversion = new StringClsUtil().ReplaceString1(xpathConversion,ControlLabel1);
+		Step("Inputting In other value in Dropdown","input","OtherDropdownDataInput;"+xpathConversion,"YES",data);
+	}
 	public void dataValidationInLISTpage(String data[][]) throws IOException
 	{
 		List<WebElement> elements = new Generics().elementCount(new XpathHub().xpathGetter("countRecordsInList")," Records Found");

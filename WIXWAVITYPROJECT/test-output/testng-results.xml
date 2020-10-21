@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="3" total="4" passed="1" failed="0" skipped="0">
+<testng-results ignored="5" total="6" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2020-10-15T17:08:52 IST" name="Suite" finished-at="2020-10-15T17:13:21 IST" duration-ms="268802">
+  <suite started-at="2020-10-21T16:24:00 IST" name="Suite" finished-at="2020-10-21T16:26:39 IST" duration-ms="159806">
     <groups>
+      <group name="Sanity">
+        <method signature="Login_Logout.CreateAnAppWithProgressControl()[pri:5, instance:TestCases.Login_Logout@54e1c68b]" name="CreateAnAppWithProgressControl" class="TestCases.Login_Logout"/>
+      </group> <!-- Sanity -->
     </groups>
-    <test started-at="2020-10-15T17:08:52 IST" name="Test" finished-at="2020-10-15T17:13:21 IST" duration-ms="268802">
+    <test started-at="2020-10-21T16:24:00 IST" name="Test" finished-at="2020-10-21T16:26:39 IST" duration-ms="159806">
       <class name="TestCases.Login_Logout">
-        <test-method signature="CreateAnAppWithNumbersControl()[pri:4, instance:TestCases.Login_Logout@7d4f9aae]" started-at="2020-10-15T17:08:54 IST" name="CreateAnAppWithNumbersControl" finished-at="2020-10-15T17:13:19 IST" duration-ms="265514" status="PASS">
+        <test-method signature="CreateAnAppWithProgressControl()[pri:5, instance:TestCases.Login_Logout@54e1c68b]" started-at="2020-10-21T16:24:04 IST" name="CreateAnAppWithProgressControl" finished-at="2020-10-21T16:26:38 IST" duration-ms="154860" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- CreateAnAppWithNumbersControl -->
+        </test-method> <!-- CreateAnAppWithProgressControl -->
       </class> <!-- TestCases.Login_Logout -->
     </test> <!-- Test -->
   </suite> <!-- Suite -->

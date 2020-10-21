@@ -51,7 +51,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Suite" class="navigator-link ">
-                    <span>V:\FRAME\P_12\testng.xml</span>
+                    <span>C:\Users\vicky\git\V2\WIXWAVITYPROJECT\testng.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -61,7 +61,7 @@
                 </li>
                 <li>
                   <a href="#" panel-name="group-Suite" class="navigator-link ">
-                    <span>0 groups</span>
+                    <span>1 group</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -104,7 +104,7 @@
                     <div class="method-list-content passed suite-Suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="TestCases.Login_Logout" class="method navigator-link" hash-for-method="CreateAnAppWithNumbersControl">CreateAnAppWithNumbersControl</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Suite" title="TestCases.Login_Logout" class="method navigator-link" hash-for-method="CreateAnAppWithProgressControl">CreateAnAppWithProgressControl</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Suite -->
@@ -127,9 +127,9 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="CreateAnAppWithNumbersControl">
-                  </a> <!-- CreateAnAppWithNumbersControl -->
-                  <span class="method-name">CreateAnAppWithNumbersControl</span>
+                  <a name="CreateAnAppWithProgressControl">
+                  </a> <!-- CreateAnAppWithProgressControl -->
+                  <span class="method-name">CreateAnAppWithProgressControl</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -137,7 +137,7 @@
         </div> <!-- panel Suite -->
         <div panel-name="test-xml-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">V:\FRAME\P_12\testng.xml</span>
+            <span class="header-content">C:\Users\vicky\git\V2\WIXWAVITYPROJECT\testng.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -173,6 +173,14 @@
             <span class="header-content">Groups for Suite</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
+            <div class="test-group">
+              <span class="test-group-name">Sanity</span>
+              <br/>
+              <div class="method-in-group">
+                <span class="method-in-group-name">CreateAnAppWithProgressControl</span>
+                <br/>
+              </div> <!-- method-in-group -->
+            </div> <!-- test-group -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="times-Suite" class="panel">
@@ -191,14 +199,14 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'CreateAnAppWithNumbersControl')
+data.setCell(0, 1, 'CreateAnAppWithProgressControl')
 data.setCell(0, 2, 'TestCases.Login_Logout')
-data.setCell(0, 3, 265514);
+data.setCell(0, 3, 154860);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 4 minutes</span>
+              <span class="suite-total-time">Total running time: 2 minutes</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -213,15 +221,19 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">3 ignored methods</span>
+            <span class="header-content">5 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="ignored-class-div">
               <span class="ignored-class-name">TestCases.Login_Logout</span>
               <div class="ignored-methods-div">
-                <span class="ignored-method-name">Login</span>
+                <span class="ignored-method-name">CreateAnAppWithReference</span>
                 <br/>
-                <span class="ignored-method-name">Login_Logout</span>
+                <span class="ignored-method-name">CreateAnAppWithNumbersControl</span>
+                <br/>
+                <span class="ignored-method-name">CreateAnAppWithADependents</span>
+                <br/>
+                <span class="ignored-method-name">CreateAnAppWithACategoryControls</span>
                 <br/>
                 <span class="ignored-method-name">CreateAnAppWithTextControls</span>
                 <br/>
@@ -237,7 +249,7 @@ return data;
             <div class="chronological-class">
               <div class="chronological-class-name">TestCases.Login_Logout</div> <!-- chronological-class-name -->
               <div class="test-method">
-                <span class="method-name">CreateAnAppWithNumbersControl</span>
+                <span class="method-name">CreateAnAppWithProgressControl</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->

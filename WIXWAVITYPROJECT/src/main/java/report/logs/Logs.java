@@ -67,13 +67,13 @@ public class Logs
 		extent.setSystemInfo("OS","Windows");
 		extent.setSystemInfo("Browser","Chrome");
 	}
-	public void CreateTestCase(String testName,String Description)
+	public void CreateTestCase(String testName,String Description,String TestType)
 	{
-		test = extent.createTest(testName," ");
-		 test.assignCategory("Group:"+" Smoke");
-		 test.assignAuthor("AutomationEngineer:"+" Vivek Reddy");
+		test = extent.createTest(testName,"DESIGNED_BY: "+"VIVEK_REDDY_M");
+		// test.assignCategory("Group:"+" Smoke");
+		 //test.assignAuthor("AutomationEngineer:"+" Vivek Reddy");
 		 test.assignDevice("OS:"+ " Windows");
-		 test.info(MarkupHelper.createCodeBlock(testName+": "+ Description));
+		 test.info(MarkupHelper.createCodeBlock("["+testName+"]: ["+ Description+"]: ["+TestType+"]"));
 		 test1 = null;
 		 i=0;
 		 
